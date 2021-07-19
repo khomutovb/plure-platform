@@ -38,7 +38,7 @@ button {
 
 .slide {
     min-width: 100%;
-    transition: transform .4s;
+    transition: transform .2s cubic-bezier(0.165, 0.84, 0.44, 1);
     transform: translateX(-200%);
     overflow-y: hidden;
 }
@@ -540,7 +540,7 @@ footer {
     text-align: center;
     letter-spacing: 0.8px;
     color: #96A7AF;
-    transition: color .4s;
+    transition: color .2s;
 }
 
 .footer__item__icon {
@@ -563,7 +563,7 @@ footer {
     margin: auto;
     z-index: -1;
     border-radius: 50%;
-    transition: left .4s;
+    transition: left .2s cubic-bezier(0.165, 0.84, 0.44, 1);
     will-change: left;
 }
 
@@ -572,7 +572,7 @@ footer {
 }
 
 .footer__item svg, .footer__item path {
-    transition: fill .4s;
+    transition: fill .2s;
 }
 
 .footer__item.is-active svg, .footer__item.is-active path {
