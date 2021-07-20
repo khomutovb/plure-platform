@@ -984,6 +984,25 @@
         </div>
         <div class="circle"></div>
     </footer>
+    <div id="leaderboad-modal" class="leaderboad-modal">
+        <div class="leaderboad-modal__inner" data-title="Leaderboard">
+            <div class="leaderboad__list">
+                <div class="leaderboad__item">
+
+                </div>
+                <div class="leaderboad__item">
+
+                </div>
+                <div class="leaderboad__item">
+
+                </div>
+                <div class="leaderboad__item">
+
+                </div>
+            </div>
+            <button class="leaderboad-modal__close">Close</button>
+        </div>
+    </div>
     <script>
         const activeFooterNavItem = document.querySelector('.footer__item.is-active')
         const footerItem = document.querySelectorAll('.footer__item')
@@ -994,6 +1013,9 @@
         const slidesLobby = document.querySelector('.lobby__content')
         const slidesGifts = document.querySelector('.gifts__content')
         const slidesAccount = document.querySelector('.accounts__content')
+        let leaderboad = document.querySelector('#leaderboad-modal')
+        let leaderboadInner = document.querySelector('.leaderboad-modal__inner')
+        let leaderboadClose = document.querySelector('.leaderboad-modal__close')
         let posY = activeFooterNavItem.offsetLeft;
         circle.style.left = `${posY - 2}px`
         footerItem.forEach((element) => {
@@ -1007,13 +1029,8 @@
                     slides.forEach((element) => {
                         element.style.transform = 'translateX(0%)'
                     })
-                    setTimeout(function () {
-                        slidesLobby.style.height = '0px'
-                        slidesResults.style.height = '0px'
-                        slidesGifts.style.height = '0px'
-                        slidesAccount.style.height = '0px'
-                    }, 200);
-                    slidesShop.style.height = 'initial'
+                    slideHide('shop')
+                    slideShow('shop')
                 }
                 if (event.currentTarget.classList.contains('results')) {
                     window.scrollTo(0, 0)
@@ -1021,39 +1038,24 @@
                     slides.forEach((element) => {
                         element.style.transform = 'translateX(-100%)'
                     })
-                    setTimeout(function () {
-                        slidesLobby.style.height = '0px'
-                        slidesShop.style.height = '0px'
-                        slidesGifts.style.height = '0px'
-                        slidesAccount.style.height = '0px'
-                    }, 200);
-                    slidesResults.style.height = 'initial'
+                    slideHide('results')
+                    slideShow('results')
                 }
                 if (event.currentTarget.classList.contains('lobby')) {
                     window.scrollTo(0, 0)
                     slides.forEach((element) => {
                         element.style.transform = 'translateX(-200%)'
                     })
-                    setTimeout(function () {
-                        slidesResults.style.height = '0px'
-                        slidesShop.style.height = '0px'
-                        slidesGifts.style.height = '0px'
-                        slidesAccount.style.height = '0px'
-                    }, 200);
-                    slidesLobby.style.height = 'initial'
+                    slideHide('lobby')
+                    slideShow('lobby')
                 }
                 if (event.currentTarget.classList.contains('gifts')) {
                     window.scrollTo(0, 0)
                     slides.forEach((element) => {
                         element.style.transform = 'translateX(-300%)'
                     })
-                    setTimeout(function () {
-                        slidesResults.style.height = '0px'
-                        slidesShop.style.height = '0px'
-                        slidesLobby.style.height = '0px'
-                        slidesAccount.style.height = '0px'
-                    }, 200);
-                    slidesGifts.style.height = 'initial'
+                    slideHide('gifts')
+                    slideShow('gifts')
                 }
                 if (event.currentTarget.classList.contains('account')) {
                     window.scrollTo(0, 0)
@@ -1061,13 +1063,8 @@
                     slides.forEach((element) => {
                         element.style.transform = 'translateX(-400%)'
                     })
-                    setTimeout(function () {
-                        slidesResults.style.height = '0px'
-                        slidesShop.style.height = '0px'
-                        slidesLobby.style.height = '0px'
-                        slidesGifts.style.height = '0px'
-                    }, 200);
-                    slidesAccount.style.height = 'initial'
+                    slideHide('account')
+                    slideShow('account')
                 }
             })
         })
@@ -1075,6 +1072,88 @@
             footerItem.forEach((element) => {
                 element.classList.remove('is-active')
             })
+        }
+        function slideShow(slide) {
+            switch (slide) {
+                case 'shop':
+                    slidesShop.style.height = '100%'
+                    break
+                case 'results':
+                    slidesResults.style.height = '100%'
+                    break
+                case 'lobby':
+                    slidesLobby.style.height = '100%'
+                    break
+                case 'gifts':
+                    slidesGifts.style.height = '100%'
+                    break
+                case 'account':
+                    slidesAccount.style.height = '100%'
+                    break
+            }
+        }
+        function slideHide(slide) {
+            switch (slide) {
+                case 'shop':
+                    setTimeout(function () {
+                        slidesLobby.style.height = '0px'
+                        slidesResults.style.height = '0px'
+                        slidesGifts.style.height = '0px'
+                        slidesAccount.style.height = '0px'
+                    }, 0);
+                    break
+                case 'results':
+                    setTimeout(function () {
+                        slidesLobby.style.height = '0px'
+                        slidesShop.style.height = '0px'
+                        slidesGifts.style.height = '0px'
+                        slidesAccount.style.height = '0px'
+                    }, 0);
+                    break
+                case 'lobby':
+                    setTimeout(function () {
+                        slidesResults.style.height = '0px'
+                        slidesShop.style.height = '0px'
+                        slidesGifts.style.height = '0px'
+                        slidesAccount.style.height = '0px'
+                    }, 0);
+                    break
+                case 'gifts':
+                    setTimeout(function () {
+                        slidesResults.style.height = '0px'
+                        slidesShop.style.height = '0px'
+                        slidesLobby.style.height = '0px'
+                        slidesAccount.style.height = '0px'
+                    }, 0);
+                    break
+                case 'account':
+                    setTimeout(function () {
+                        slidesResults.style.height = '0px'
+                        slidesShop.style.height = '0px'
+                        slidesLobby.style.height = '0px'
+                        slidesGifts.style.height = '0px'
+                    }, 0);
+                    break
+            }
+        }
+        window.addEventListener('click', function (event) {
+            if ((event.target).closest('.btn__leaderboard')) {
+                leaderboad.classList.toggle('is-active')
+                leaderboadInner.classList.toggle('is-active')
+                document.querySelector('body').classList.toggle('overflow')
+            }
+            if ((event.target).classList.contains('leaderboad-modal')) {
+                closeModal()
+            }
+
+        })
+        leaderboadClose.addEventListener('click', () => {
+            closeModal()
+        })
+        function closeModal() {
+            leaderboad.classList.remove('is-active')
+            leaderboadInner.classList.remove('is-active')
+            document.querySelector('body').classList.remove('overflow')
         }
     </script>
 </body>

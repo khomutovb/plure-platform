@@ -10,6 +10,11 @@ html, body {
     min-height: 100%;
     height: 100%;
     overflow-x: hidden;
+    overflow: overlay;
+}
+
+body {
+    background: #1F2E35;
 }
 
 button {
@@ -24,7 +29,7 @@ button {
     right: 0;
     width: 100%;
     min-height: 100%;
-    max-width: 375px;
+    max-width: 500px;
     background: #1F2E35;
     margin: auto;
     overflow-y: auto;
@@ -32,22 +37,26 @@ button {
     display: flex;
 }
 
-.shop__content, .gifts__content, .accounts__content {
-    min-height: 838px;
-}
-
 .slide {
     min-width: 100%;
-    transition: transform .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform .6s, height .6s;
     transform: translateX(-200%);
     overflow-y: hidden;
+}
+
+.shop__content, .results__content, .gifts__content, .accounts__content {
+    height: 0px;
+}
+
+.lobby__content {
+    height: 100%;
 }
 
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    max-width: 375px;
+    max-width: 500px;
     height: 60px;
     background: #30444E;
     box-shadow: 0px 1px 14px #19282f;
@@ -505,7 +514,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    max-width: 375px;
+    max-width: 500px;
     height: 96px;
     background: #30444E;
     box-shadow: 0px 0px 24px rgba(25, 40, 47, 0.6);
@@ -530,6 +539,7 @@ footer {
     padding-top: 28px;
     cursor: pointer;
     width: 56px;
+    transition: opacity .4s;
 }
 
 .footer__item p {
@@ -540,7 +550,7 @@ footer {
     text-align: center;
     letter-spacing: 0.8px;
     color: #96A7AF;
-    transition: color .2s;
+    transition: color .4s;
 }
 
 .footer__item__icon {
@@ -563,7 +573,7 @@ footer {
     margin: auto;
     z-index: -1;
     border-radius: 50%;
-    transition: left .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: left .4s;
     will-change: left;
 }
 
@@ -572,7 +582,7 @@ footer {
 }
 
 .footer__item svg, .footer__item path {
-    transition: fill .2s;
+    transition: fill .4s;
 }
 
 .footer__item.is-active svg, .footer__item.is-active path {
@@ -585,6 +595,100 @@ footer {
 
 .footer__item.account {
     width: 72px;
+}
+
+.leaderboad-modal {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .6s, visibility .6s;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    z-index: 998;
+}
+
+.leaderboad-modal.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.leaderboad-modal__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform .6s;
+    padding: 50px 16px 24px;
+    width: 100%;
+    max-width: 318px;
+    will-change: transform;
+    margin: auto;
+    background: #30444E;
+    border-radius: 24px;
+}
+
+.leaderboad-modal__inner.is-active {
+    transform: translateY(30%);
+}
+
+.leaderboad-modal__inner::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: attr(data-title) "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -20px;
+    margin: auto;
+    background: #6952DC;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 238px;
+    height: 48px;
+    color: #fff;
+    font-family: Maven Pro;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.8px;
+}
+
+.leaderboad__list {
+    width: 100%;
+    padding-bottom: 8px;
+}
+
+.leaderboad__item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 72px;
+    width: 100%;
+    border: 2px solid #96A7AF;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.leaderboad-modal__close {
+    width: 100%;
+    max-width: 144px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFBC25;
+    border-radius: 8px;
+    color: #fff;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    cursor: pointer;
 }
 
 @media (max-width: 350px) {
@@ -602,10 +706,10 @@ footer {
     .footer__item p {
         font-size: 14px;
     }
-    .header__item{
+    .header__item {
         font-size: 12px;
     }
-    .header__item span{
+    .header__item span {
         margin-left: 6px;
     }
 }
