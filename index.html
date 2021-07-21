@@ -1123,7 +1123,6 @@
         integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        alert('new')
         const activeFooterNavItem = document.querySelector('.footer__item.is-active')
         const footerItem = document.querySelectorAll('.footer__item')
         const circle = document.querySelector('footer .circle')
@@ -1149,7 +1148,7 @@
                 if (event.currentTarget.classList.contains('shop')) {
                     window.scrollTo(0, 0)
                     slides.forEach((element) => {
-                        TweenLite.to(element, 0.5, { xPercent: 0, x: 0, ease: Power2.ease });
+                        TweenLite.to(element, 0.5, { xPercent: 0, x: 0 });
                     })
                     slideHide('shop')
                     slideShow('shop')
@@ -1158,7 +1157,7 @@
                     window.scrollTo(0, 0)
                     circle.style.left = `${posY + 2}px`
                     slides.forEach((element) => {
-                        TweenLite.to(element, 0.5, { xPercent: -100, x: 0, ease: Power2.ease });
+                        TweenLite.to(element, 0.5, { xPercent: -100, x: 0 });
                     })
                     slideHide('results')
                     slideShow('results')
@@ -1166,7 +1165,7 @@
                 if (event.currentTarget.classList.contains('lobby')) {
                     window.scrollTo(0, 0)
                     slides.forEach((element) => {
-                        TweenLite.to(element, 0.5, { xPercent: -200, x: 0, ease: Power2.ease });
+                        TweenLite.to(element, 0.5, { xPercent: -200, x: 0 });
                     })
                     slideHide('lobby')
                     slideShow('lobby')
@@ -1174,7 +1173,7 @@
                 if (event.currentTarget.classList.contains('gifts')) {
                     window.scrollTo(0, 0)
                     slides.forEach((element) => {
-                        TweenLite.to(element, 0.5, { xPercent: -300, x: 0, ease: Power2.ease });
+                        TweenLite.to(element, 0.5, { xPercent: -300, x: 0 });
                     })
                     slideHide('gifts')
                     slideShow('gifts')
@@ -1183,7 +1182,7 @@
                     window.scrollTo(0, 0)
                     circle.style.left = `${posY + 5}px`
                     slides.forEach((element) => {
-                        TweenLite.to(element, 0.5, { xPercent: -400, x: 0, ease: Power2.ease });
+                        TweenLite.to(element, 0.5, { xPercent: -400, x: 0 });
                     })
                     slideHide('account')
                     slideShow('account')
