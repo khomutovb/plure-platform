@@ -1,4 +1,12 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -6,7 +14,12 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-html, body {
+html {
+    min-height: 100%;
+    height: 100%;
+}
+
+body {
     min-height: 100%;
     height: 100%;
     overflow-x: hidden;
@@ -15,6 +28,10 @@ html, body {
 
 body {
     background: #1F2E35;
+}
+
+body.overflow {
+    overflow: hidden;
 }
 
 button {
@@ -34,12 +51,20 @@ button {
     margin: auto;
     overflow-y: auto;
     overflow-x: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
 .slide {
     min-width: 100%;
+    -webkit-transition: height .6s, -webkit-transform .6s;
+    transition: height .6s, -webkit-transform .6s;
+    -o-transition: transform .6s, height .6s;
     transition: transform .6s, height .6s;
+    transition: transform .6s, height .6s, -webkit-transform .6s;
+    -webkit-transform: translateX(-200%);
+    -ms-transform: translateX(-200%);
     transform: translateX(-200%);
     overflow-y: hidden;
 }
@@ -59,6 +84,7 @@ header {
     max-width: 500px;
     height: 60px;
     background: #30444E;
+    -webkit-box-shadow: 0px 1px 14px #19282f;
     box-shadow: 0px 1px 14px #19282f;
     border-radius: 0px 0px 24px 24px;
     z-index: 99;
@@ -68,15 +94,25 @@ header {
 }
 
 .header__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 0 16px;
 }
 
 .header__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     position: relative;
     width: 92px;
@@ -119,14 +155,21 @@ header {
 }
 
 .special-offers__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
 .special-offers__item {
     width: 50%;
+    -webkit-box-shadow: 0px 1px 14px #19282f;
     box-shadow: 0px 1px 14px #19282f;
     border-radius: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
     align-items: flex-end;
     padding: 11px 0px 15px 17px;
 }
@@ -144,7 +187,11 @@ header {
 .special-offers__item__svg {
     width: 36px;
     height: 36px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -191,11 +238,16 @@ header {
 
 .tournaments__item {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     height: 104px;
     width: 100%;
     background: #30444E;
+    -webkit-box-shadow: 0px 1px 14px #19282F;
     box-shadow: 0px 1px 14px #19282F;
     border-radius: 16px;
     margin-bottom: 20px;
@@ -203,8 +255,14 @@ header {
 
 .tournaments__item-left__info::before {
     content: attr(data-offer) "";
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     position: absolute;
     top: -12px;
@@ -227,9 +285,18 @@ header {
     border-radius: 16px 0px 0px 16px;
     width: 104px;
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     margin-right: 6px;
 }
@@ -256,8 +323,15 @@ header {
 
 .tournaments__item-middle__info {
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
     margin: auto;
     margin-left: 0;
@@ -291,10 +365,19 @@ header {
 .tournaments__item-right__info {
     margin-right: 12px;
     text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     height: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -307,7 +390,11 @@ header {
 }
 
 .tournaments__item-right__info .prizes__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding: 2px 0;
 }
@@ -339,8 +426,14 @@ header {
     width: 100%;
     min-width: 92px;
     height: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     color: #fff;
     font-family: Roboto;
@@ -366,11 +459,16 @@ header {
 
 .results__item {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     width: 100%;
     min-height: 104px;
     background: #30444E;
+    -webkit-box-shadow: 0px 1px 14px #19282f;
     box-shadow: 0px 1px 14px #19282f;
     border-radius: 16px;
     margin-bottom: 8px;
@@ -380,9 +478,18 @@ header {
     position: relative;
     border-radius: 16px 0px 0px 16px;
     width: 104px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     margin-right: 8px;
     background: #2A3C44;
@@ -457,8 +564,14 @@ header {
     width: 100%;
     max-width: 112px;
     height: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     color: #fff;
     font-family: Roboto;
@@ -473,6 +586,8 @@ header {
     margin-right: 27px;
     text-align: center;
     height: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -487,8 +602,12 @@ header {
 }
 
 .results__item-right__info .prizes__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin-bottom: 8px;
 }
@@ -517,6 +636,7 @@ footer {
     max-width: 500px;
     height: 96px;
     background: #30444E;
+    -webkit-box-shadow: 0px 0px 24px rgba(25, 40, 47, 0.6);
     box-shadow: 0px 0px 24px rgba(25, 40, 47, 0.6);
     border-radius: 24px 24px 0px 0px;
     z-index: 99;
@@ -526,8 +646,12 @@ footer {
 }
 
 .footer__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     height: 100%;
     padding: 0 8px 0 16px;
@@ -539,6 +663,8 @@ footer {
     padding-top: 28px;
     cursor: pointer;
     width: 56px;
+    -webkit-transition: opacity .4s;
+    -o-transition: opacity .4s;
     transition: opacity .4s;
 }
 
@@ -550,6 +676,8 @@ footer {
     text-align: center;
     letter-spacing: 0.8px;
     color: #96A7AF;
+    -webkit-transition: color .4s;
+    -o-transition: color .4s;
     transition: color .4s;
 }
 
@@ -573,6 +701,8 @@ footer {
     margin: auto;
     z-index: -1;
     border-radius: 50%;
+    -webkit-transition: left .4s;
+    -o-transition: left .4s;
     transition: left .4s;
     will-change: left;
 }
@@ -582,6 +712,8 @@ footer {
 }
 
 .footer__item svg, .footer__item path {
+    -webkit-transition: fill .4s;
+    -o-transition: fill .4s;
     transition: fill .4s;
 }
 
@@ -600,6 +732,8 @@ footer {
 .leaderboad-modal {
     opacity: 0;
     visibility: hidden;
+    -webkit-transition: opacity .6s, visibility .6s;
+    -o-transition: opacity .6s, visibility .6s;
     transition: opacity .6s, visibility .6s;
     width: 100%;
     height: 100vh;
@@ -607,6 +741,7 @@ footer {
     position: fixed;
     top: 0;
     z-index: 998;
+    overflow: auto;
 }
 
 .leaderboad-modal.is-active {
@@ -616,12 +751,27 @@ footer {
 
 .leaderboad-modal__inner {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
     transform: translateY(-100%);
+    -webkit-transition: -webkit-transform .6s;
+    transition: -webkit-transform .6s;
+    -o-transition: transform .6s;
     transition: transform .6s;
+    transition: transform .6s, -webkit-transform .6s;
     padding: 50px 16px 24px;
     width: 100%;
     max-width: 318px;
@@ -629,15 +779,24 @@ footer {
     margin: auto;
     background: #30444E;
     border-radius: 24px;
+    margin: 40px auto;
 }
 
 .leaderboad-modal__inner.is-active {
-    transform: translateY(30%);
+    -webkit-transform: translateY(calc(0%));
+    -ms-transform: translateY(calc(0%));
+    transform: translateY(calc(0%));
 }
 
 .leaderboad-modal__inner::before {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     content: attr(data-title) "";
     position: absolute;
@@ -660,12 +819,15 @@ footer {
 
 .leaderboad__list {
     width: 100%;
-    padding-bottom: 8px;
 }
 
 .leaderboad__item {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     height: 72px;
     width: 100%;
@@ -678,8 +840,14 @@ footer {
     width: 100%;
     max-width: 144px;
     height: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     background: #FFBC25;
     border-radius: 8px;
@@ -689,6 +857,105 @@ footer {
     font-size: 14px;
     line-height: 16px;
     cursor: pointer;
+    margin-top: 8px;
+}
+
+.leaderboad__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 27px;
+}
+
+.leaderboad__item-content .place {
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 21px;
+    color: #fff;
+}
+
+.leaderboad__item-content.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.leaderboad__item.avatar img {
+    background-size: cover;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.leaderboad__item-content.info {
+    margin-right: 14px;
+}
+
+.leaderboad__item-content .name {
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+    padding-bottom: 8px;
+}
+
+.leaderboad__item-content .score {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #1F2E35;
+}
+
+.leaderboad__item-content .score span {
+    color: #fff;
+    padding-left: 4px;
+}
+
+.leaderboad__item-content .prize-text {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 8px;
+    padding-bottom: 5px;
+    margin-top: -4px;
+}
+
+.leaderboad__item-content .number-prize svg {
+    vertical-align: bottom;
+}
+
+.leaderboad__item-content .number-prize span {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+
+.leaderboad__item:nth-child(1) .leaderboad__item-content .place {
+    color: #FFBC25;
+}
+
+.leaderboad__item:nth-child(2) .leaderboad__item-content .place {
+    color: #FFBC25;
+}
+
+.leaderboad__item:nth-child(3) .leaderboad__item-content .place {
+    color: #FFBC25;
 }
 
 @media (max-width: 350px) {
@@ -711,5 +978,8 @@ footer {
     }
     .header__item span {
         margin-left: 6px;
+    }
+    .leaderboad-modal__inner {
+        max-width: 300px;
     }
 }
