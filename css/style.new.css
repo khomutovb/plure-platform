@@ -51,16 +51,16 @@ button {
 
 .slide {
     min-width: 100%;
-    -webkit-transition: height 400ms cubic-bezier(.5,0,.5,1), -webkit-transform 400ms cubic-bezier(.5,0,.5,1);
-    transition: height 400ms cubic-bezier(.5,0,.5,1), -webkit-transform 400ms cubic-bezier(.5,0,.5,1);
-    -o-transition: transform 400ms cubic-bezier(.5,0,.5,1), height 400ms cubic-bezier(.5,0,.5,1);
-    transition: transform 400ms cubic-bezier(.5,0,.5,1), height 400ms cubic-bezier(.5,0,.5,1);
-    transition: transform 400ms cubic-bezier(.5,0,.5,1), height 400ms cubic-bezier(.5,0,.5,1), -webkit-transform 400ms cubic-bezier(.5,0,.5,1);
+    -webkit-transition: height 500ms cubic-bezier(.5,0,.5,1), -webkit-transform 500ms cubic-bezier(.5,0,.5,1), opacity 300ms cubic-bezier(.5,0,.5,1);
+    transition: height 500ms cubic-bezier(.5,0,.5,1), -webkit-transform 500ms cubic-bezier(.5,0,.5,1), opacity 300ms cubic-bezier(.5,0,.5,1);
+    -o-transition: transform 500ms cubic-bezier(.5,0,.5,1), height 500ms cubic-bezier(.5,0,.5,1), opacity 300ms cubic-bezier(.5,0,.5,1);
+    transition: transform 500ms cubic-bezier(.5,0,.5,1), height 500ms cubic-bezier(.5,0,.5,1), opacity 300ms cubic-bezier(.5,0,.5,1);
+    transition: transform 500ms cubic-bezier(.5,0,.5,1), height 500ms cubic-bezier(.5,0,.5,1), -webkit-transform 500ms cubic-bezier(.5,0,.5,1), opacity 300ms cubic-bezier(.5,0,.5,1);
     -webkit-transform: translateX(-200%);
     -ms-transform: translateX(-200%);
     transform: translateX(-200%);
     overflow-y: hidden;
-    will-change: transform, height;
+    will-change: transform, height, opacity;
 }
 
 .shop__content, .results__content, .gifts__content, .accounts__content {
@@ -695,9 +695,9 @@ footer {
     margin: auto;
     z-index: -1;
     border-radius: 50%;
-    -webkit-transition: left 400ms;
-    -o-transition: left 400ms;
-    transition: left 400ms;
+    -webkit-transition: left 500ms;
+    -o-transition: left 500ms;
+    transition: left 500ms;
     will-change: left;
 }
 
@@ -706,9 +706,9 @@ footer {
 }
 
 .footer__item svg, .footer__item path {
-    -webkit-transition: fill 400ms;
-    -o-transition: fill 400ms;
-    transition: fill 400ms;
+    -webkit-transition: fill 500ms;
+    -o-transition: fill 500ms;
+    transition: fill 500ms;
 }
 
 .footer__item.is-active svg, .footer__item.is-active path {
