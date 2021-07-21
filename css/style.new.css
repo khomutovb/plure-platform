@@ -51,16 +51,16 @@ button {
 
 .slide {
     min-width: 100%;
-    -webkit-transition: height 700ms;
-    transition: height 700ms;
-    -o-transition: height 700ms;
-    transition: height 700ms;
-    transition: height 700ms;
+    -webkit-transition: height 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+    transition: height 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+    -o-transition: transform 400ms ease-in-out, height 400ms ease-in-out;
+    transition: transform 400ms ease-in-out, height 400ms ease-in-out;
+    transition: transform 400ms ease-in-out, height 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
     -webkit-transform: translateX(-200%);
     -ms-transform: translateX(-200%);
     transform: translateX(-200%);
     overflow-y: hidden;
-    will-change: transform;
+    will-change: transform, height;
 }
 
 .shop__content, .results__content, .gifts__content, .accounts__content {
