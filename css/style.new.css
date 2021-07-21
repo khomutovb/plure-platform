@@ -51,11 +51,11 @@ button {
 
 .slide {
     min-width: 100%;
-    -webkit-transition: height 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
-    transition: height 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
-    -o-transition: transform 400ms ease-in-out, height 400ms ease-in-out;
-    transition: transform 400ms ease-in-out, height 400ms ease-in-out;
-    transition: transform 400ms ease-in-out, height 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+    -webkit-transition: height 400ms cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: height 400ms cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: transform 400ms cubic-bezier(0.645, 0.045, 0.355, 1), height 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 400ms cubic-bezier(0.645, 0.045, 0.355, 1), height 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 400ms cubic-bezier(0.645, 0.045, 0.355, 1), height 400ms cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
     -webkit-transform: translateX(-200%);
     -ms-transform: translateX(-200%);
     transform: translateX(-200%);
