@@ -1148,7 +1148,7 @@
                 if (event.currentTarget.classList.contains('shop')) {
                     window.scrollTo(0, 0)
                     slides.forEach((element) => {
-                        TweenLite.to(element, 0.4, { xPercent: 0, x: 0 });
+                        TweenLite.to(element, 0.5, { xPercent: 0, x: 0, ease: Power2.ease });
                     })
                     slideHide('shop')
                     slideShow('shop')
@@ -1157,7 +1157,7 @@
                     window.scrollTo(0, 0)
                     circle.style.left = `${posY + 2}px`
                     slides.forEach((element) => {
-                        TweenLite.to(element, 0.4, { xPercent: -100, x: 0 });
+                        TweenLite.to(element, 0.5, { xPercent: -100, x: 0, ease: Power2.ease });
                     })
                     slideHide('results')
                     slideShow('results')
@@ -1165,7 +1165,7 @@
                 if (event.currentTarget.classList.contains('lobby')) {
                     window.scrollTo(0, 0)
                     slides.forEach((element) => {
-                        TweenLite.to(element, 0.4, { xPercent: -200, x: 0 });
+                        TweenLite.to(element, 0.5, { xPercent: -200, x: 0, ease: Power2.ease });
                     })
                     slideHide('lobby')
                     slideShow('lobby')
@@ -1173,7 +1173,7 @@
                 if (event.currentTarget.classList.contains('gifts')) {
                     window.scrollTo(0, 0)
                     slides.forEach((element) => {
-                        TweenLite.to(element, 0.4, { xPercent: -300, x: 0 });
+                        TweenLite.to(element, 0.5, { xPercent: -300, x: 0, ease: Power2.ease });
                     })
                     slideHide('gifts')
                     slideShow('gifts')
@@ -1182,7 +1182,7 @@
                     window.scrollTo(0, 0)
                     circle.style.left = `${posY + 5}px`
                     slides.forEach((element) => {
-                        TweenLite.to(element, 0.4, { xPercent: -400, x: 0 });
+                        TweenLite.to(element, 0.5, { xPercent: -400, x: 0, ease: Power2.ease });
                     })
                     slideHide('account')
                     slideShow('account')

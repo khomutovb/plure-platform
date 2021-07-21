@@ -51,11 +51,11 @@ button {
 
 .slide {
     min-width: 100%;
-    -webkit-transition: height 400ms;
-    transition: height 400ms;
-    -o-transition: height 400ms;
-    transition: height 400ms;
-    transition: height 400ms;
+    -webkit-transition: height 700ms;
+    transition: height 700ms;
+    -o-transition: height 700ms;
+    transition: height 700ms;
+    transition: height 700ms;
     -webkit-transform: translateX(-200%);
     -ms-transform: translateX(-200%);
     transform: translateX(-200%);
