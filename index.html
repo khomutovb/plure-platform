@@ -1214,48 +1214,7 @@
             }
         }
         function slideHide(slide) {
-            switch (slide) {
-                case 'shop':
-                    setTimeout(function () {
-                        slidesLobby.style.height = '0px'
-                        slidesResults.style.height = '0px'
-                        slidesGifts.style.height = '0px'
-                        slidesAccount.style.height = '0px'
-                    }, 0);
-                    break
-                case 'results':
-                    setTimeout(function () {
-                        slidesLobby.style.height = '0px'
-                        slidesShop.style.height = '0px'
-                        slidesGifts.style.height = '0px'
-                        slidesAccount.style.height = '0px'
-                    }, 0);
-                    break
-                case 'lobby':
-                    setTimeout(function () {
-                        slidesResults.style.height = '0px'
-                        slidesShop.style.height = '0px'
-                        slidesGifts.style.height = '0px'
-                        slidesAccount.style.height = '0px'
-                    }, 0);
-                    break
-                case 'gifts':
-                    setTimeout(function () {
-                        slidesResults.style.height = '0px'
-                        slidesShop.style.height = '0px'
-                        slidesLobby.style.height = '0px'
-                        slidesAccount.style.height = '0px'
-                    }, 0);
-                    break
-                case 'account':
-                    setTimeout(function () {
-                        slidesResults.style.height = '0px'
-                        slidesShop.style.height = '0px'
-                        slidesLobby.style.height = '0px'
-                        slidesGifts.style.height = '0px'
-                    }, 0);
-                    break
-            }
+            
         }
         window.addEventListener('click', function (event) {
             if ((event.target).closest('.btn__leaderboard')) {
