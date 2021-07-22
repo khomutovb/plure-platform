@@ -53,20 +53,20 @@ button {
     display: flex;
     width: 100%;
     transform: translate3d(-200%, 0, 0);
-    -webkit-transition: -webkit-transform 500ms ease-in-out;
-    -moz-transition: transform 500ms ease-in-out;
-    -o-transition: transform 500ms ease-in-out;
-    transition: transform 500ms ease-in-out;
+    -webkit-transition: -webkit-transform 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    -moz-transition: transform 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    -o-transition: transform 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
     will-change: transform;
 }
 
 .slide {
     min-width: 100%;
     overflow-y: hidden;
-    -webkit-transition: opacity 300ms ease-in-out;
-    -moz-transition: opacity 300ms ease-in-out;
-    -o-transition: opacity 300ms ease-in-out;
-    transition: opacity 300ms ease-in-out;
+    -webkit-transition: opacity 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    -moz-transition: opacity 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    -o-transition: opacity 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: opacity 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
     height: 100%;
 }
 
