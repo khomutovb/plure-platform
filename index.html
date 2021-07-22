@@ -1146,7 +1146,7 @@
         let setting = document.querySelector('#setting-modal')
         let settingInner = document.querySelector('.setting-modal__inner')
         let posY = activeFooterNavItem.offsetLeft;
-        let heightBody = document.documentElement.clientWidth
+        let heightBody = document.documentElement.clientHeight
         circle.style.left = `${posY - 2}px`
         window.addEventListener('resize', function (event) {
             let activeItem = document.querySelector('.footer__item.is-active')
@@ -1237,7 +1237,6 @@
                 }
             })
         })
-        alert(heightBody)
         function removeActiveClass() {
             footerItem.forEach((element) => {
                 element.classList.remove('is-active')
