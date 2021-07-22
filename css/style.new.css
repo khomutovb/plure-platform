@@ -51,11 +51,11 @@ button {
 
 .slide {
     min-width: 100%;
-    -webkit-transform: translateX(-200%);
-    -moz-transform: translateX(-200%);
-    -ms-transform: translateX(-200%);
-    -o-transform: translateX(-200%);
-    transform: translateX(-200%);
+    -webkit-transform: translate3d(-200%, 0 0);
+    -moz-transform: translate3d(-200%, 0 0);
+    -ms-transform: translate3d(-200%, 0 0);
+    -o-transform: translate3d(-200%, 0 0);
+    transform: translate3d(-200%, 0 0);
     -webkit-transition: -webkit-transform 500ms ease-in-out, height 500ms ease-in-out, opacity 300ms ease-in-out;
     -moz-transition: transform 500ms ease-in-out, height 500ms ease-in-out, opacity 300ms ease-in-out;
     -o-transition: transform 500ms ease-in-out, height 500ms ease-in-out, opacity 300ms ease-in-out;
@@ -65,43 +65,43 @@ button {
 }
 
 .shop__content.active {
-    -webkit-transform: translateX(0%);
-    -moz-transform: translateX(0%);
-    -ms-transform: translateX(0%);
-    -o-transform: translateX(0%);
-    transform: translateX(0%);
+    -webkit-transform: translate3d(0%, 0, 0);
+    -moz-transform: translate3d(0%, 0, 0);
+    -ms-transform: translate3d(0%, 0, 0);
+    -o-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
 }
 
 .results__content.active {
-    -webkit-transform: translateX(-100%);
-    -moz-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    -o-transform: translateX(-100%);
-    transform: translateX(-100%);
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    -o-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
 }
 
 .lobby__content.active {
-    -webkit-transform: translateX(-200%);
-    -moz-transform: translateX(-200%);
-    -ms-transform: translateX(-200%);
-    -o-transform: translateX(-200%);
-    transform: translateX(-200%);
+    -webkit-transform: translate3d(-200%, 0, 0);
+    -moz-transform: translate3d(-200%, 0, 0);
+    -ms-transform: translate3d(-200%, 0, 0);
+    -o-transform: translate3d(-200%, 0, 0);
+    transform: translate3d(-200%, 0, 0);
 }
 
 .gifts__content.active {
-    -webkit-transform: translateX(-300%);
-    -moz-transform: translateX(-300%);
-    -ms-transform: translateX(-300%);
-    -o-transform: translateX(-300%);
-    transform: translateX(-300%);
+    -webkit-transform: translate3d(-300%, 0, 0);
+    -moz-transform: translate3d(-300%, 0, 0);
+    -ms-transform: translate3d(-300%, 0, 0);
+    -o-transform: translate3d(-300%, 0, 0);
+    transform: translate3d(-300%, 0, 0);
 }
 
 .account__content.active {
-    -webkit-transform: translateX(-400%);
-    -moz-transform: translateX(-400%);
-    -ms-transform: translateX(-400%);
-    -o-transform: translateX(-400%);
-    transform: translateX(-400%);
+    -webkit-transform: translate3d(-400%, 0, 0);
+    -moz-transform: translate3d(-400%, 0, 0);
+    -ms-transform: translate3d(-400%, 0, 0);
+    -o-transform: translate3d(-400%, 0, 0);
+    transform: translate3d(-400%, 0, 0);
 }
 
 .shop__content, .results__content, .gifts__content, .accounts__content {
@@ -729,7 +729,7 @@ footer {
     position: absolute;
     width: 60px;
     height: 60px;
-    background: red;
+    background: #40DB9C;
     left: 158px;
     top: -16px;
     bottom: 0;
