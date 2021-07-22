@@ -56,10 +56,10 @@ button {
     -ms-transform: translate3d(-200%, 0, 0);
     -o-transform: translate3d(-200%, 0, 0);
     transform: translate3d(-200%, 0, 0);
-    -webkit-transition: -webkit-transform 500ms ease-in-out, height 500ms ease-in-out, opacity 300ms ease-in-out;
-    -moz-transition: transform 500ms ease-in-out, height 500ms ease-in-out, opacity 300ms ease-in-out;
-    -o-transition: transform 500ms ease-in-out, height 500ms ease-in-out, opacity 300ms ease-in-out;
-    transition: transform 500ms ease-in-out, height 500ms ease-in-out, opacity 300ms ease-in-out;
+    -webkit-transition: -webkit-transform 500ms, height 500ms, opacity 300ms;
+    -moz-transition: transform 500ms, height 500ms, opacity 300ms;
+    -o-transition: transform 500ms, height 500ms, opacity 300ms;
+    transition: transform 500ms, height 500ms, opacity 300ms;
     overflow-y: hidden;
     will-change: transform, height, opacity;
 }
