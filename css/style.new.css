@@ -104,7 +104,6 @@ button {
     transform: translate3d(-400%, 0, 0);
 }
 
-
 .lobby__content {
     height: 100%;
 }
@@ -1080,6 +1079,12 @@ footer {
 
 .leaderboad__item:nth-child(3) .leaderboad__item-content .place {
     color: #FFBC25;
+}
+
+@media (max-width: 360px) {
+    .tournaments__item-middle__info .players {
+        padding: 10px 0 14px;
+    }
 }
 
 @media (max-width: 350px) {
