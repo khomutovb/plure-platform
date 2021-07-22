@@ -56,12 +56,12 @@ button {
     -ms-transform: translate3d(-200%, 0, 0);
     -o-transform: translate3d(-200%, 0, 0);
     transform: translate3d(-200%, 0, 0);
-    -webkit-transition: -webkit-transform 400ms, height 400ms, opacity 300ms;
-    -moz-transition: transform 400ms, height 400ms, opacity 300ms;
-    -o-transition: transform 400ms, height 400ms, opacity 300ms;
-    transition: transform 400ms, height 400ms, opacity 300ms;
+    -webkit-transition: -webkit-transform 400ms, height 400ms;
+    -moz-transition: transform 400ms, height 400ms;
+    -o-transition: transform 400ms, height 400ms;
+    transition: transform 400ms, height 400ms;
     overflow-y: hidden;
-    will-change: transform, height, opacity;
+    will-change: transform, height;
 }
 
 .shop__content.active {
