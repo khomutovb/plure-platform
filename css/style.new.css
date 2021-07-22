@@ -53,20 +53,20 @@ button {
     display: flex;
     width: 100%;
     transform: translate3d(-200%, 0, 0);
-    -webkit-transition: -webkit-transform 600ms ease 0s;
-    -moz-transition: transform 600ms ease 0s;
-    -o-transition: transform 600ms ease 0s;
-    transition: transform 600ms ease 0s;
+    -webkit-transition: -webkit-transform 600ms ease-in-out 0s;
+    -moz-transition: transform 600ms ease-in-out 0s;
+    -o-transition: transform 600ms ease-in-out 0s;
+    transition: transform 600ms ease-in-out 0s;
     will-change: transform;
 }
 
 .slide {
     min-width: 100%;
     overflow-y: hidden;
-    -webkit-transition: opacity 300ms;
-    -moz-transition: opacity 300ms;
-    -o-transition: opacity 300ms;
-    transition: opacity 300ms;
+    -webkit-transition: opacity 600ms;
+    -moz-transition: opacity 600ms;
+    -o-transition: opacity 600ms;
+    transition: opacity 600ms;
     height: 100%;
 }
 
