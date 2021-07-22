@@ -56,10 +56,10 @@ button {
     -ms-transform: translate3d(-200%, 0, 0);
     -o-transform: translate3d(-200%, 0, 0);
     transform: translate3d(-200%, 0, 0);
-    -webkit-transition: -webkit-transform 500ms ease-in-out, height 500ms ease-in-out, opacity 300ms ease-in-out;
-    -moz-transition: transform 500ms ease-in-out, height 500ms ease-in-out, opacity 300ms ease-in-out;
-    -o-transition: transform 500ms ease-in-out, height 500ms ease-in-out, opacity 300ms ease-in-out;
-    transition: transform 500ms ease-in-out, height 500ms ease-in-out, opacity 300ms ease-in-out;
+    -webkit-transition: -webkit-transform 500ms ease-in-out, height 500ms ease-in-out, opacity 600ms ease-in-out;
+    -moz-transition: transform 500ms ease-in-out, height 500ms ease-in-out, opacity 600ms ease-in-out;
+    -o-transition: transform 500ms ease-in-out, height 500ms ease-in-out, opacity 600ms ease-in-out;
+    transition: transform 500ms ease-in-out, height 500ms ease-in-out, opacity 600ms ease-in-out;
     overflow-y: hidden;
     will-change: transform, height, opacity;
 }
@@ -725,7 +725,7 @@ footer {
     position: absolute;
     width: 60px;
     height: 60px;
-    background: darkblue;
+    background: #40DB9C;
     left: 158px;
     top: -16px;
     bottom: 0;
