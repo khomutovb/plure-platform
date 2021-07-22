@@ -53,10 +53,10 @@ button {
     display: flex;
     width: 100%;
     transform: translate3d(-200%, 0, 0);
-    -webkit-transition: -webkit-transform 600ms ease 0s;
-    -moz-transition: transform 600ms ease 0s;
-    -o-transition: transform 600ms ease 0s;
-    transition: transform 600ms ease 0s;
+    -webkit-transition: -webkit-transform 1000ms ease 0s;
+    -moz-transition: transform 1000ms ease 0s;
+    -o-transition: transform 1000ms ease 0s;
+    transition: transform 1000ms ease 0s;
     will-change: transform;
 }
 
