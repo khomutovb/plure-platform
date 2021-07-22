@@ -1141,6 +1141,12 @@
             let activeItem = document.querySelector('.footer__item.is-active')
             let newPosY = activeItem.offsetLeft;
             circle.style.left = `${newPosY - 2}px`
+            if(activeItem.classList.contains('account')){
+                circle.style.left = `${newPosY + 5}px`
+            }
+            if(activeItem.classList.contains('results')){
+                circle.style.left = `${newPosY + 2}px`
+            }
         });
         footerItem.forEach((element) => {
             element.addEventListener('click', (event) => {
