@@ -1123,6 +1123,8 @@
         const page = document.documentElement;
         const activeFooterNavItem = document.querySelector('.footer__item.is-active')
         const footerItem = document.querySelectorAll('.footer__item')
+        const footerItemResult = document.querySelector('.footer__item.results')
+        const footerItemLobby = document.querySelector('.footer__item.lobby')
         const circle = document.querySelector('footer .circle')
         const slides = document.querySelectorAll('.slide')
         const slidesShop = document.querySelector('.shop__content')
@@ -1141,13 +1143,36 @@
             let activeItem = document.querySelector('.footer__item.is-active')
             let newPosY = activeItem.offsetLeft;
             circle.style.left = `${newPosY - 2}px`
-            if(activeItem.classList.contains('account')){
+            if (activeItem.classList.contains('account')) {
                 circle.style.left = `${newPosY + 5}px`
             }
-            if(activeItem.classList.contains('results')){
+            if (activeItem.classList.contains('results')) {
                 circle.style.left = `${newPosY + 2}px`
             }
         });
+        footerItemResult.addEventListener('click', () => {
+            window.scroll({
+                top: 0,
+
+            });
+            circle.style.left = `${posY + 2}px`
+            slides.forEach((element) => {
+                element.className = 'slide results__content active'
+            })
+            slideHide('results')
+            slideShow('results')
+        })
+        footerItemLobby.addEventListener('click', () => {
+            window.scroll({
+                top: 0,
+
+            });
+            slides.forEach((element) => {
+                element.className = 'slide lobby__content active'
+            })
+            slideHide('lobby')
+            slideShow('lobby')
+        })
         footerItem.forEach((element) => {
             element.addEventListener('click', (event) => {
                 removeActiveClass()
@@ -1164,29 +1189,6 @@
                     })
                     slideHide('shop')
                     slideShow('shop')
-                }
-                if (event.currentTarget.classList.contains('results')) {
-                    window.scroll({
-                        top: 0,
-
-                    });
-                    circle.style.left = `${posY + 2}px`
-                    slides.forEach((element) => {
-                        element.className = 'slide results__content active'
-                    })
-                    slideHide('results')
-                    slideShow('results')
-                }
-                if (event.currentTarget.classList.contains('lobby')) {
-                    window.scroll({
-                        top: 0,
-
-                    });
-                    slides.forEach((element) => {
-                        element.className = 'slide lobby__content active'
-                    })
-                    slideHide('lobby')
-                    slideShow('lobby')
                 }
                 if (event.currentTarget.classList.contains('gifts')) {
                     window.scroll({
