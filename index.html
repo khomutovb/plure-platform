@@ -1222,18 +1222,23 @@
             switch (slide) {
                 case 'shop':
                     slidesShop.style.height = '100%'
+                    slidesShop.style.opacity = 1
                     break
                 case 'results':
                     slidesResults.style.height = '100%'
+                    slidesResults.style.opacity = 1
                     break
                 case 'lobby':
                     slidesLobby.style.height = '100%'
+                    slidesLobby.style.opacity = 1
                     break
                 case 'gifts':
                     slidesGifts.style.height = '100%'
+                    slidesGifts.style.opacity = 1
                     break
                 case 'account':
                     slidesAccount.style.height = '100%'
+                    slidesAccount.style.opacity = 1
                     break
             }
         }
@@ -1245,6 +1250,10 @@
                         slidesResults.style.height = '0px'
                         slidesGifts.style.height = '0px'
                         slidesAccount.style.height = '0px'
+                        slidesLobby.style.opacity = 0
+                        slidesResults.style.opacity = 0
+                        slidesGifts.style.opacity = 0
+                        slidesAccount.style.opacity = 0
                     }, 0);
                     break
                 case 'results':
@@ -1253,6 +1262,10 @@
                         slidesShop.style.height = '0px'
                         slidesGifts.style.height = '0px'
                         slidesAccount.style.height = '0px'
+                        slidesLobby.style.opacity = 0
+                        slidesShop.style.opacity = 0
+                        slidesGifts.style.opacity = 0
+                        slidesAccount.style.opacity = 0
                     }, 0);
                     break
                 case 'lobby':
@@ -1261,6 +1274,10 @@
                         slidesShop.style.height = '0px'
                         slidesGifts.style.height = '0px'
                         slidesAccount.style.height = '0px'
+                        slidesResults.style.opacity = 0
+                        slidesShop.style.opacity = 0
+                        slidesGifts.style.opacity = 0
+                        slidesAccount.style.opacity = 0
                     }, 0);
                     break
                 case 'gifts':
@@ -1269,6 +1286,10 @@
                         slidesShop.style.height = '0px'
                         slidesLobby.style.height = '0px'
                         slidesAccount.style.height = '0px'
+                        slidesResults.style.opacity = 0
+                        slidesShop.style.opacity = 0
+                        slidesLobby.style.opacity = 0
+                        slidesAccount.style.opacity = 0
                     }, 0);
                     break
                 case 'account':
@@ -1277,6 +1298,10 @@
                         slidesShop.style.height = '0px'
                         slidesLobby.style.height = '0px'
                         slidesGifts.style.height = '0px'
+                        slidesResults.style.opacity = 0
+                        slidesShop.style.opacity = 0
+                        slidesLobby.style.opacity = 0
+                        slidesGifts.style.opacity = 0
                     }, 0);
                     break
             }
