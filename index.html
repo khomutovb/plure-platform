@@ -1146,6 +1146,7 @@
         let setting = document.querySelector('#setting-modal')
         let settingInner = document.querySelector('.setting-modal__inner')
         let posY = activeFooterNavItem.offsetLeft;
+        let heightBody = document.documentElement.clientWidth
         circle.style.left = `${posY - 2}px`
         window.addEventListener('resize', function (event) {
             let activeItem = document.querySelector('.footer__item.is-active')
@@ -1177,7 +1178,7 @@
                             element.classList.add('active')
                             element.style.opacity = 1
                         }
-                        element.style.height = `${slidesShop.clientHeight < 859 ? 859 : slidesShop.clientHeight}px`
+                        slideLine.style.height = `${slidesShop.clientHeight < heightBody ? heightBody : slidesShop.clientHeight}px`
                     })
                 }
                 if (event.currentTarget.classList.contains('results')) {
@@ -1191,7 +1192,7 @@
                             element.classList.add('active')
                             element.style.opacity = 1
                         }
-                        element.style.height = `${slidesResults.clientHeight < 859 ? 859 : slidesResults.clientHeight}px`
+                        slideLine.style.height = `${slidesResults.clientHeight < heightBody ? heightBody : slidesResults.clientHeight}px`
                     })
                 }
                 if (event.currentTarget.classList.contains('lobby')) {
@@ -1204,7 +1205,7 @@
                             element.classList.add('active')
                             element.style.opacity = 1
                         }
-                        element.style.height = `${slidesLobby.clientHeight}px`
+                        slideLine.style.height = `${slidesLobby.clientHeight}px`
                     })
                 }
                 if (event.currentTarget.classList.contains('gifts')) {
@@ -1217,7 +1218,7 @@
                             element.classList.add('active')
                             element.style.opacity = 1
                         }
-                        element.style.height = `${slidesGifts.clientHeight < 859 ? 859 : slidesGifts.clientHeight}px`
+                        slideLine.style.height = `${slidesGifts.clientHeight < heightBody ? heightBody : slidesGifts.clientHeight}px`
                     })
                 }
                 if (event.currentTarget.classList.contains('account')) {
@@ -1231,11 +1232,12 @@
                             element.classList.add('active')
                             element.style.opacity = 1
                         }
-                        element.style.height = `${slidesAccount.clientHeight < 859 ? 859 : slidesAccount.clientHeight}px`
+                        slideLine.style.height = `${slidesAccount.clientHeight < heightBody ? heightBody : slidesAccount.clientHeight}px`
                     })
                 }
             })
         })
+        alert(heightBody)
         function removeActiveClass() {
             footerItem.forEach((element) => {
                 element.classList.remove('is-active')

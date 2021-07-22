@@ -53,20 +53,21 @@ button {
     display: flex;
     width: 100%;
     transform: translate3d(-200%, 0, 0);
-    -webkit-transition: -webkit-transform 500ms ease-in-out;
-    -moz-transition: transform 500ms ease-in-out;
-    -o-transition: transform 500ms ease-in-out;
-    transition: transform 500ms ease-in-out;
+    -webkit-transition: -webkit-transform 500ms;
+    -moz-transition: transform 500ms;
+    -o-transition: transform 500ms;
+    transition: transform 500ms;
     will-change: transform;
 }
 
 .slide {
     min-width: 100%;
     overflow-y: hidden;
-    -webkit-transition: opacity 300ms ease-in-out;
-    -moz-transition: opacity 300ms ease-in-out;
-    -o-transition: opacity 300ms ease-in-out;
-    transition: opacity 300ms ease-in-out;
+    -webkit-transition: opacity 300ms;
+    -moz-transition: opacity 300ms;
+    -o-transition: opacity 300ms;
+    transition: opacity 300ms;
+    height: 100%;
 }
 
 .slide.active {
@@ -690,7 +691,7 @@ footer {
     position: absolute;
     width: 60px;
     height: 60px;
-    background: #40DB9C;
+    background: gold;
     left: 158px;
     top: -16px;
     bottom: 0;
