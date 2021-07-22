@@ -1137,6 +1137,11 @@
         let settingInner = document.querySelector('.setting-modal__inner')
         let posY = activeFooterNavItem.offsetLeft;
         circle.style.left = `${posY - 2}px`
+        window.addEventListener('resize', function (event) {
+            let activeItem = document.querySelector('.footer__item.is-active')
+            let newPosY = activeItem.offsetLeft;
+            circle.style.left = `${newPosY - 2}px`
+        });
         footerItem.forEach((element) => {
             element.addEventListener('click', (event) => {
                 removeActiveClass()
