@@ -1149,7 +1149,7 @@
             }
         });
         footerItem.forEach((element) => {
-            element.addEventListener('click', (event) => {
+            element.addEventListener('touchstart', (event) => {
                 removeActiveClass()
                 element.classList.add('is-active')
                 let posY = element.offsetLeft;
@@ -1306,7 +1306,7 @@
                     break
             }
         }
-        window.addEventListener('click', function (event) {
+        window.addEventListener('touchstart', function (event) {
             if ((event.target).closest('.btn__leaderboard')) {
                 leaderboad.scrollTo(0, 0)
                 leaderboad.classList.toggle('is-active')
@@ -1339,7 +1339,7 @@
             }
 
         })
-        leaderboadClose.addEventListener('click', () => {
+        leaderboadClose.addEventListener('touchstart', () => {
             closeModal()
         })
         function closeModal() {
