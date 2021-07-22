@@ -64,7 +64,7 @@ button {
     will-change: transform, height, opacity;
 }
 
-.slide.shop {
+.shop__content.active {
     -webkit-transform: translateX(0%);
     -moz-transform: translateX(0%);
     -ms-transform: translateX(0%);
@@ -72,7 +72,7 @@ button {
     transform: translateX(0%);
 }
 
-.slide.results {
+.results__content.active {
     -webkit-transform: translateX(-100%);
     -moz-transform: translateX(-100%);
     -ms-transform: translateX(-100%);
@@ -80,7 +80,7 @@ button {
     transform: translateX(-100%);
 }
 
-.slide.lobby {
+.lobby__content.active {
     -webkit-transform: translateX(-200%);
     -moz-transform: translateX(-200%);
     -ms-transform: translateX(-200%);
@@ -88,7 +88,7 @@ button {
     transform: translateX(-200%);
 }
 
-.slide.gifts {
+.gifts__content.active {
     -webkit-transform: translateX(-300%);
     -moz-transform: translateX(-300%);
     -ms-transform: translateX(-300%);
@@ -96,7 +96,7 @@ button {
     transform: translateX(-300%);
 }
 
-.slide.account {
+.account__content.active {
     -webkit-transform: translateX(-400%);
     -moz-transform: translateX(-400%);
     -ms-transform: translateX(-400%);
