@@ -56,12 +56,10 @@ button {
     -ms-transform: translate3d(-200%, 0, 0);
     -o-transform: translate3d(-200%, 0, 0);
     transform: translate3d(-200%, 0, 0);
-    -webkit-transition: all 400ms;
-    -moz-transition: all 400ms;
-    -o-transition: all 400ms;
-    transition: all 400ms;
-    transition-delay: 0s, 1s;
-    transition-duration: 500ms;
+    -webkit-transition: all 900ms;
+    -moz-transition: all 900ms;
+    -o-transition: all 900ms;
+    transition: all 900ms;
     overflow-y: hidden;
     will-change: transform, height;
 }
