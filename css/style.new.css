@@ -63,10 +63,10 @@ button {
 .slide {
     min-width: 100%;
     overflow-y: hidden;
-    -webkit-transition: opacity 300ms;
-    -moz-transition: opacity 300ms;
-    -o-transition: opacity 300ms;
-    transition: opacity 300ms;
+    -webkit-transition: opacity 800ms;
+    -moz-transition: opacity 800ms;
+    -o-transition: opacity 800ms;
+    transition: opacity 800ms;
     height: 100%;
 }
 
