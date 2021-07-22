@@ -51,16 +51,57 @@ button {
 
 .slide {
     min-width: 100%;
-    -webkit-transition: height 500ms cubic-bezier(.5,0,.5,1), -webkit-transform 500ms cubic-bezier(.5,0,.5,1), opacity 300ms cubic-bezier(.5,0,.5,1);
-    transition: height 500ms cubic-bezier(.5,0,.5,1), -webkit-transform 500ms cubic-bezier(.5,0,.5,1), opacity 300ms cubic-bezier(.5,0,.5,1);
-    -o-transition: transform 500ms cubic-bezier(.5,0,.5,1), height 500ms cubic-bezier(.5,0,.5,1), opacity 300ms cubic-bezier(.5,0,.5,1);
-    transition: transform 500ms cubic-bezier(.5,0,.5,1), height 500ms cubic-bezier(.5,0,.5,1), opacity 300ms cubic-bezier(.5,0,.5,1);
-    transition: transform 500ms cubic-bezier(.5,0,.5,1), height 500ms cubic-bezier(.5,0,.5,1), -webkit-transform 500ms cubic-bezier(.5,0,.5,1), opacity 300ms cubic-bezier(.5,0,.5,1);
     -webkit-transform: translateX(-200%);
+    -moz-transform: translateX(-200%);
     -ms-transform: translateX(-200%);
+    -o-transform: translateX(-200%);
     transform: translateX(-200%);
+    -webkit-transition: -webkit-transform 500ms cubic-bezier(.5, 0, .5, 1), height 500ms cubic-bezier(.5, 0, .5, 1), opacity 300ms cubic-bezier(.5, 0, .5, 1);
+    -moz-transition: transform 500ms cubic-bezier(.5, 0, .5, 1), height 500ms cubic-bezier(.5, 0, .5, 1), opacity 300ms cubic-bezier(.5, 0, .5, 1);
+    -o-transition: transform 500ms cubic-bezier(.5, 0, .5, 1), height 500ms cubic-bezier(.5, 0, .5, 1), opacity 300ms cubic-bezier(.5, 0, .5, 1);
+    transition: transform 500ms cubic-bezier(.5, 0, .5, 1), height 500ms cubic-bezier(.5, 0, .5, 1), opacity 300ms cubic-bezier(.5, 0, .5, 1);
     overflow-y: hidden;
     will-change: transform, height, opacity;
+}
+
+.slide.shop {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+}
+
+.slide.results {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+.slide.lobby {
+    -webkit-transform: translateX(-200%);
+    -moz-transform: translateX(-200%);
+    -ms-transform: translateX(-200%);
+    -o-transform: translateX(-200%);
+    transform: translateX(-200%);
+}
+
+.slide.gifts {
+    -webkit-transform: translateX(-300%);
+    -moz-transform: translateX(-300%);
+    -ms-transform: translateX(-300%);
+    -o-transform: translateX(-300%);
+    transform: translateX(-300%);
+}
+
+.slide.account {
+    -webkit-transform: translateX(-400%);
+    -moz-transform: translateX(-400%);
+    -ms-transform: translateX(-400%);
+    -o-transform: translateX(-400%);
+    transform: translateX(-400%);
 }
 
 .shop__content, .results__content, .gifts__content, .accounts__content {
