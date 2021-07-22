@@ -56,10 +56,10 @@ button {
     -ms-transform: translate3d(-200%, 0, 0);
     -o-transform: translate3d(-200%, 0, 0);
     transform: translate3d(-200%, 0, 0);
-    -webkit-transition: -webkit-transform 400ms, height 100ms, opacity 300ms;
-    -moz-transition: transform 400ms, height 100ms, opacity 300ms;
-    -o-transition: transform 400ms, height 100ms, opacity 300ms;
-    transition: transform 400ms, height 100ms, opacity 300ms;
+    -webkit-transition: -webkit-transform 400ms, opacity 300ms;
+    -moz-transition: transform 400ms, opacity 300ms;
+    -o-transition: transform 400ms, opacity 300ms;
+    transition: transform 400ms, opacity 300ms;
     overflow-y: hidden;
     will-change: transform, height, opacity;
 }
@@ -104,9 +104,6 @@ button {
     transform: translate3d(-400%, 0, 0);
 }
 
-.shop__content, .results__content, .gifts__content, .accounts__content {
-    height: 0px;
-}
 
 .lobby__content {
     height: 100%;
