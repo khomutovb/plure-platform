@@ -52,21 +52,22 @@ button {
 .slide__line {
     display: flex;
     width: 100%;
-    transform: translate3d(-200%, 0, 0);
-    -webkit-transition: -webkit-transform 1000ms ease 0s;
-    -moz-transition: transform 1000ms ease 0s;
-    -o-transition: transform 1000ms ease 0s;
-    transition: transform 1000ms ease 0s;
-    will-change: transform;
+    -webkit-transition: left 600ms ease 0s;
+    -moz-transition: left 600ms ease 0s;
+    -o-transition: left 600ms ease 0s;
+    transition: left 600ms ease 0s;
+    will-change: left;
+    position: relative;
+    left: -200%;
 }
 
 .slide {
     min-width: 100%;
     overflow-y: hidden;
-    -webkit-transition: opacity 800ms;
-    -moz-transition: opacity 800ms;
-    -o-transition: opacity 800ms;
-    transition: opacity 800ms;
+    -webkit-transition: opacity 400ms;
+    -moz-transition: opacity 400ms;
+    -o-transition: opacity 400ms;
+    transition: opacity 400ms;
     height: 100%;
 }
 
