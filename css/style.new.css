@@ -56,10 +56,10 @@ button {
     -ms-transform: translate3d(-200%, 0, 0);
     -o-transform: translate3d(-200%, 0, 0);
     transform: translate3d(-200%, 0, 0);
-    -webkit-transition: -webkit-transform 400ms, opacity 300ms;
-    -moz-transition: transform 400ms, opacity 300ms;
-    -o-transition: transform 400ms, opacity 300ms;
-    transition: transform 400ms, opacity 300ms;
+    -webkit-transition: -webkit-transform 500ms ease-in-out, height 500ms ease-in-out, opacity 300ms ease-in-out;
+    -moz-transition: transform 500ms ease-in-out, height 500ms ease-in-out, opacity 300ms ease-in-out;
+    -o-transition: transform 500ms ease-in-out, height 500ms ease-in-out, opacity 300ms ease-in-out;
+    transition: transform 500ms ease-in-out, height 500ms ease-in-out, opacity 300ms ease-in-out;
     overflow-y: hidden;
     will-change: transform, height, opacity;
 }
@@ -733,9 +733,9 @@ footer {
     margin: auto;
     z-index: -1;
     border-radius: 50%;
-    -webkit-transition: left 400ms;
-    -o-transition: left 400ms;
-    transition: left 400ms;
+    -webkit-transition: left 500ms;
+    -o-transition: left 500ms;
+    transition: left 500ms;
     will-change: left;
 }
 
@@ -744,9 +744,9 @@ footer {
 }
 
 .footer__item svg, .footer__item path {
-    -webkit-transition: fill 400ms;
-    -o-transition: fill 400ms;
-    transition: fill 400ms;
+    -webkit-transition: fill 500ms;
+    -o-transition: fill 500ms;
+    transition: fill 500ms;
 }
 
 .footer__item.is-active svg, .footer__item.is-active path {
