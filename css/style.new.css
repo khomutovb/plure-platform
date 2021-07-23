@@ -59,13 +59,16 @@ button {
     -ms-transform: translateX(-200%);
     -o-transform: translateX(-200%);
     transform: translateX(-200%);
+    will-change: transform;
+}
+
+.slide__line.animation {
     -webkit-transition: -webkit-transform 400ms ease-in-out;
     -webkit-transition: transform 400ms ease-in-out;
     -moz-transition: transform 400ms ease-in-out;
     -o-transition: transform 400ms ease-in-out;
     transition: -webkit-transform 400ms ease-in-out;
     transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
-    will-change: transform;
 }
 
 .slide__line.shop {
@@ -736,16 +739,20 @@ footer {
     width: 60px;
     height: 60px;
     background: #40DB9C;
-    left: 158px;
+    left: 0;
+    right: 0;
     top: -16px;
     bottom: 0;
     margin: auto;
     z-index: -1;
     border-radius: 50%;
+    will-change: left;
+}
+
+.circle.animation {
     -webkit-transition: left 500ms;
     -o-transition: left 500ms;
     transition: left 500ms;
-    will-change: left;
 }
 
 .footer__item.is-active p {
