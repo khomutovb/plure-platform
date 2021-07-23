@@ -1240,12 +1240,6 @@
             if ((event.target).classList.contains('leaderboad-modal')) {
                 closeModal()
             }
-            if ((event.target).closest('.header__item.setting')) {
-                alert('Setting Modal')
-                setting.classList.add('is-active')
-                settingInner.classList.add('is-active')
-                document.querySelector('body').classList.add('overflow')
-            }
             if ((event.target).classList.contains('setting-modal')) {
                 setting.classList.remove('is-active')
                 settingInner.classList.remove('is-active')
@@ -1263,6 +1257,12 @@
                 }
             }
         })
+        btnSetting.addEventListener("click", function () {
+            alert('Setting Modal')
+            setting.classList.add('is-active')
+            settingInner.classList.add('is-active')
+            document.querySelector('body').classList.add('overflow')
+        });
         leaderboadClose.addEventListener('click', () => {
             closeModal()
         })
