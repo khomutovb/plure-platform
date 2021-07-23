@@ -11,7 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.new.css?">
+    <link rel="stylesheet" href="css/style.new.css?v=15">
 </head>
 
 <body>
@@ -1145,6 +1145,7 @@
         let leaderboadClose = document.querySelector('.leaderboad-modal__close')
         let setting = document.querySelector('#setting-modal')
         let settingInner = document.querySelector('.setting-modal__inner')
+        let btnSetting = document.querySelector('.header__item.setting')
         let posY = activeFooterNavItem.offsetLeft;
         let heightBody = document.documentElement.clientHeight
         circle.style.left = `${posY - 2}px`
@@ -1238,16 +1239,16 @@
         window.addEventListener('click', function (event) {
             if ((event.target).closest('.btn__leaderboard')) {
                 leaderboad.scrollTo(0, 0)
-                leaderboad.classList.toggle('is-active')
-                leaderboadInner.classList.toggle('is-active')
+                leaderboad.classList.add('is-active')
+                leaderboadInner.classList.add('is-active')
                 document.querySelector('body').classList.add('overflow')
             }
             if ((event.target).classList.contains('leaderboad-modal')) {
                 closeModal()
             }
             if ((event.target).closest('.header__item.setting')) {
-                setting.classList.toggle('is-active')
-                settingInner.classList.toggle('is-active')
+                setting.classList.add('is-active')
+                settingInner.classList.add('is-active')
                 document.querySelector('body').classList.add('overflow')
             }
             if ((event.target).classList.contains('setting-modal')) {
@@ -1266,7 +1267,18 @@
                     page.msRequestFullscreen();
                 }
             }
-
+        })
+        window.addEventListener('touchstart', () => {
+            if ((event.target).closest('.header__item.setting')) {
+                setting.classList.add('is-active')
+                settingInner.classList.add('is-active')
+                document.querySelector('body').classList.add('overflow')
+            }
+            if ((event.target).classList.contains('setting-modal')) {
+                setting.classList.remove('is-active')
+                settingInner.classList.remove('is-active')
+                document.querySelector('body').classList.remove('overflow')
+            }
         })
         leaderboadClose.addEventListener('click', () => {
             closeModal()
