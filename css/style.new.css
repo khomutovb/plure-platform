@@ -55,13 +55,16 @@ button {
     display: flex;
     width: 100%;
     -webkit-transform: translateX(-200%);
+    -moz-transform: translateX(-200%);
     -ms-transform: translateX(-200%);
+    -o-transform: translateX(-200%);
     transform: translateX(-200%);
-    -webkit-transition: -webkit-transform 400ms ease-in-out 0s;
-    transition: -webkit-transform 400ms ease-in-out 0s;
-    -o-transition: transform 400ms ease-in-out 0s;
-    transition: transform 400ms ease-in-out 0s;
-    transition: transform 400ms ease-in-out 0s, -webkit-transform 400ms ease-in-out 0s;
+    -webkit-transition: -webkit-transform 400ms ease-in-out;
+    -webkit-transition: transform 400ms ease-in-out;
+    -moz-transition: transform 400ms ease-in-out;
+    -o-transition: transform 400ms ease-in-out;
+    transition: -webkit-transform 400ms ease-in-out;
+    transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
     will-change: transform;
 }
 
@@ -736,7 +739,7 @@ footer {
     position: absolute;
     width: 60px;
     height: 60px;
-    background: black;
+    background: red;
     left: 158px;
     top: -16px;
     bottom: 0;
