@@ -59,13 +59,16 @@ button {
     -ms-transform: translateX(-200%);
     -o-transform: translateX(-200%);
     transform: translateX(-200%);
+    will-change: transform;
 }
 
 .slide__line.animation {
-    -webkit-transition: all 400ms ease-in-out;
-    -moz-transition: all 400ms ease-in-out;
-    -o-transition: all 400ms ease-in-out;
-    transition: all 400ms ease-in-out;
+    -webkit-transition: -webkit-transform .4s ease-in-out;
+    transition: -webkit-transform .4s ease-in-out;
+    -o-transition: -o-transform .4s ease-in-out;
+    -moz-transition: transform .4s ease-in-out, -moz-transform .4s ease-in-out;
+    transition: transform .4s ease-in-out;
+    transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out, -moz-transform .4s ease-in-out, -o-transform .4s ease-in-out;
 }
 
 .slide__line.shop {
