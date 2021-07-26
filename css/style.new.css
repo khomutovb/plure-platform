@@ -59,16 +59,13 @@ button {
     -ms-transform: translateX(-200%);
     -o-transform: translateX(-200%);
     transform: translateX(-200%);
-    will-change: transform;
 }
 
 .slide__line.animation {
-    -webkit-transition: -webkit-transform 400ms ease-in-out;
-    -webkit-transition: transform 400ms ease-in-out;
-    -moz-transition: transform 400ms ease-in-out;
-    -o-transition: transform 400ms ease-in-out;
-    transition: -webkit-transform 400ms ease-in-out;
-    transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+    -webkit-transition: all 400ms ease-in-out;
+    -moz-transition: all 400ms ease-in-out;
+    -o-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
 }
 
 .slide__line.shop {
@@ -830,7 +827,7 @@ footer {
     align-items: center;
     padding: 36px 33px;
     width: 100%;
-    max-width: 200px;
+    max-width: 173px;
     will-change: transform;
     margin: auto;
     background: #30444E;
