@@ -2435,8 +2435,14 @@
             console.log(yDown)
             if (Math.abs(xDiff) > Math.abs(yDiff)) {
                 if (xDiff > 0) {
+                    window.scroll({
+                        top: 0,
+                    });
                     slideLine.className = 'slide__line animation lobby'
                 } else {
+                    window.scroll({
+                        top: 0,
+                    });
                     slideLine.className = 'slide__line animation results'
                 }
             }
