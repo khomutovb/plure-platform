@@ -2410,12 +2410,11 @@
         }
         document.addEventListener('touchstart', handleTouchStart, false);
         document.addEventListener('touchmove', handleTouchMove, false);
-        var xDown = null;
-        var yDown = null;
+        let xDown = null;
+        let yDown = null;
 
         function getTouches(evt) {
-            return evt.touches || // чистый API JS
-                evt.originalEvent.touches; // jQuery
+            return evt.touches
         }
 
         function handleTouchStart(evt) {
@@ -2428,27 +2427,19 @@
             if (!xDown || !yDown) {
                 return;
             }
+            let xUp = evt.touches[0].clientX;
+            let yUp = evt.touches[0].clientY;
 
-            var xUp = evt.touches[0].clientX;
-            var yUp = evt.touches[0].clientY;
-
-            var xDiff = xDown - xUp;
-            var yDiff = yDown - yUp;
-
-            if (Math.abs(xDiff) > Math.abs(yDiff)) {/* отлавливаем разницу в движении */
+            let xDiff = xDown - xUp;
+            let yDiff = yDown - yUp;
+            console.log(yDown)
+            if (Math.abs(xDiff) > Math.abs(yDiff)) {
                 if (xDiff > 0) {
-                    alert('swipe left')
+                    slideLine.className = 'slide__line animation lobby'
                 } else {
-                    alert('swipe right')
-                }
-            } else {
-                if (yDiff > 0) {
-                    /* swipe вверх */
-                } else {
-                    /* swipe вниз */
+                    slideLine.className = 'slide__line animation results'
                 }
             }
-            /* свайп был, обнуляем координаты */
             xDown = null;
             yDown = null;
         };
