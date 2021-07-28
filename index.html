@@ -2410,45 +2410,35 @@
         }
         document.addEventListener('touchstart', handleTouchStart, false);
         document.addEventListener('touchmove', handleTouchMove, false);
-        let xDown = null;
-        let yDown = null;
+        let x1 = null;
+        let y1 = null;
 
-        function getTouches(evt) {
-            return evt.touches
+        function handleTouchStart(event) {
+            const firstTouch = event.touches[0]
+            x1 = firstTouch.clientX
+            y1 = firstTouch.clientY
         }
-
-        function handleTouchStart(evt) {
-            const firstTouch = getTouches(evt)[0];
-            xDown = firstTouch.clientX;
-            yDown = firstTouch.clientY;
-        };
-
-        function handleTouchMove(evt) {
-            if (!xDown || !yDown) {
-                return;
+        function handleTouchMove(event) {
+            if (!x1 || !y1) {
+                return false
             }
-            let xUp = evt.touches[0].clientX;
-            let yUp = evt.touches[0].clientY;
-
-            let xDiff = xDown - xUp;
-            let yDiff = yDown - yUp;
-            console.log(yDown)
+            let x2 = event.touches[0].clientX
+            let y2 = event.touches[0].clientY
+            let xDiff = x2 - x1
+            let yDiff = y2 - y1
             if (Math.abs(xDiff) > Math.abs(yDiff)) {
                 if (xDiff > 0) {
-                    window.scroll({
-                        top: 0,
-                    });
-                    slideLine.className = 'slide__line animation lobby'
+                    let left = Math.round(x2)
+                    slideLine.style.transform = `translateX(${left > 0 ? -left : 0}%)`
+                    console.log(left)
                 } else {
-                    window.scroll({
-                        top: 0,
-                    });
-                    slideLine.className = 'slide__line animation results'
+                    let left = Math.round(x2)
+                    slideLine.style.transform = `translateX(${left < -400 ? 0 : -left}%)`
+                    console.log(left)
                 }
             }
-            xDown = null;
-            yDown = null;
-        };
+            xDiff = null
+        }
     </script>
 </body>
 
