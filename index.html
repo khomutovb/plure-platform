@@ -2412,31 +2412,46 @@
         document.addEventListener('touchmove', handleTouchMove, false);
         let x1 = null;
         let y1 = null;
+        let oldDiff = 0;
 
         function handleTouchStart(event) {
             const firstTouch = event.touches[0]
             x1 = firstTouch.clientX
             y1 = firstTouch.clientY
+            var touch = event.touches.item(0);
+            var r1 = touch.target.closest(".slide")
+            if (r1) {
+                if (r1.classList.contains('lobby__content')) {
+                    x1 = 200
+                } else if (r1.classList.contains('results__content')) {
+                    x1 = 100
+                } else if (r1.classList.contains('shop__content')) {
+                    x1 = 0
+                } else if (r1.classList.contains('gifts__content')) {
+                    x1 = -100
+                } else if (r1.classList.contains('accounts__content')) {
+                    x1 = -200
+                }
+            }
+            console.log(x1)
         }
         function handleTouchMove(event) {
-            if (!x1 || !y1) {
-                return false
-            }
             let x2 = event.touches[0].clientX
             let y2 = event.touches[0].clientY
             let xDiff = x2 - x1
             let yDiff = y2 - y1
+            console.log(oldDiff)
             if (Math.abs(xDiff) > Math.abs(yDiff)) {
                 if (xDiff > 0) {
                     let left = Math.round(x2)
-                    slideLine.style.transform = `translateX(${-left < -400 ? -400 : -left }%)`
+                    slideLine.style.transform = `translateX(${-left < -400 ? -400 : -left}%)`
                 } else {
                     let left = Math.round(x2)
-                    slideLine.style.transform = `translateX(${left < 0 ? 0 : -left }%)`
+                    slideLine.style.transform = `translateX(${left < 0 ? 0 : -left}%)`
                     console.log(left)
                 }
             }
-            xDiff = null
+            oldDiff = xDiff
         }
     </script>
 </body>
