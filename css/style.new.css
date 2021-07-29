@@ -16,6 +16,10 @@ html {
     color: #FFBC25;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     min-height: 100%;
     height: 100%;
@@ -64,11 +68,11 @@ button {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    -webkit-transform: translateX(-400%);
-    -moz-transform: translateX(-400%);
-    -ms-transform: translateX(-400%);
-    -o-transform: translateX(-400%);
-    transform: translateX(-400%);
+    -webkit-transform: translateX(-200%);
+    -moz-transform: translateX(-200%);
+    -ms-transform: translateX(-200%);
+    -o-transform: translateX(-200%);
+    transform: translateX(-200%);
     will-change: transform;
 }
 
@@ -937,9 +941,9 @@ footer {
 }
 
 .leaderboad-modal__inner.is-active {
-    -webkit-transform: translateY(calc(0%));
-    -ms-transform: translateY(calc(0%));
-    transform: translateY(calc(0%));
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
 }
 
 .leaderboad-modal__inner::before {
@@ -1358,9 +1362,9 @@ footer {
 }
 
 .edit-account__inner.is-active {
-    -webkit-transform: translateY(calc(0%));
-    -ms-transform: translateY(calc(0%));
-    transform: translateY(calc(0%));
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
 }
 
 .edit-account__inner::before {
@@ -1551,9 +1555,9 @@ footer {
 }
 
 .login-account__inner.is-active {
-    -webkit-transform: translateY(calc(0%));
-    -ms-transform: translateY(calc(0%));
-    transform: translateY(calc(0%));
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
 }
 
 .login-account__inner::before {
@@ -1825,9 +1829,9 @@ footer {
 }
 
 .register-account__inner.is-active {
-    -webkit-transform: translateY(calc(0%));
-    -ms-transform: translateY(calc(0%));
-    transform: translateY(calc(0%));
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
 }
 
 .register-account__inner::before {
@@ -2008,9 +2012,263 @@ footer {
     text-indent: 0;
     padding-right: 0;
 }
-.btn__already-login{
+
+.btn__already-login {
     color: #40DB9C;
     cursor: pointer;
+}
+
+.deposit-modal {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 400ms, visibility 400ms;
+    -o-transition: opacity 400ms, visibility 400ms;
+    transition: opacity 400ms, visibility 400ms;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    z-index: 998;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.deposit-modal.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.deposit-modal__inner {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition: -webkit-transform 400ms ease-in-out;
+    -webkit-transition: transform 400ms ease-in-out;
+    -moz-transition: transform 400ms ease-in-out;
+    -o-transition: transform 400ms ease-in-out;
+    transition: -webkit-transform 400ms ease-in-out;
+    transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+    padding: 40px 16px 30px;
+    width: calc(100% - 32px);
+    max-width: 343px;
+    will-change: transform;
+    margin: auto;
+    background: #30444E;
+    border-radius: 24px;
+}
+
+.deposit-modal__inner.is-active {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.deposit-modal__inner::before {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    content: attr(data-title) "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -20px;
+    margin: auto;
+    background: #475E69;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 238px;
+    height: 48px;
+    color: #fff;
+    font-family: Maven Pro;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 0.8px;
+}
+
+.deposit-modal__close {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    cursor: pointer;
+}
+
+.deposit-modal__info {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 28px;
+}
+
+.prices__list {
+    width: 100%;
+    max-width: 278px;
+    margin: auto;
+    margin-top: 21px;
+}
+
+.prises__item {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+    justify-content: space-between;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    border-top: 1px solid #475E69;
+}
+
+.prises__item:first-child .deposit-price {
+    color: #40DB9C;
+}
+
+.prises__item:last-child {
+    border-bottom: 1px solid #475E69;
+}
+
+.prises__item:last-child .deposit-price {
+    color: #FFBC25;
+}
+
+.deposit-extra__info {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #96A7AF;
+    margin-top: 16px;
+}
+
+.checkout__list-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 29px;
+    margin-bottom: 8px;
+}
+
+.checkout__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #FFFFFF;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    width: 162px;
+    height: 32px;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+
+.checkout__item.paypal {
+    background: #FFBC25;
+}
+
+.checkout__item:last-child {
+    margin-bottom: 0;
+    background: #40DB9C;
+}
+
+.credit-card__icon {
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    margin: auto;
+}
+
+.input__checkbox {
+    margin-top: 32px;
+    position: relative;
+    border-bottom: 1px solid #475E69;
+    padding-bottom: 30px;
+}
+
+.checkbox span {
+    display: block;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+    margin-left: 40px;
+}
+
+.checkbox>input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.checkbox>span::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #96A7AF;
+    border-radius: 2px;
+    margin-right: 19px;
+    position: absolute;
+    left: 0;
+    top: 4px;
+    background-position: center center;
+    margin: auto;
+}
+
+.checkbox>input:checked+span::before {
+    border-color: #40DB9C;
+    background-image: url("data:image/svg+xml,%0A%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 0H2C0.89 0 0 0.9 0 2V16C0 17.1 0.89 18 2 18H16C17.11 18 18 17.1 18 16V2C18 0.9 17.11 0 16 0ZM7 14L2 9L3.41 7.59L7 11.17L14.59 3.58L16 5L7 14Z' fill='%2340DB9C'/%3E%3C/svg%3E%0A");
+    background-size: 20px 20px;
+}
+
+.terms {
+    color: #40DB9C;
+    cursor: pointer;
+}
+.payment__methood{
+    margin-top: 16px;
 }
 @media (max-width: 360px) {
     .tournaments__item-middle__info .players {
