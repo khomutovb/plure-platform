@@ -4739,7 +4739,7 @@
         }
         function p1handleTouchEnd(event) {
             var change = startingX - event.changedTouches[0].clientX
-            var half = screen.width / 7
+            var half = screen.width / 6
             if (change < half) {
                 p2.style.transform = 'translateX(0)'
                 p1.style.transform = 'translateX(0)'
@@ -4782,7 +4782,7 @@
         }
         function p2handleTouchEnd(event) {
             var change = event.changedTouches[0].clientX - startingX
-            var half = screen.width / 7
+            var half = screen.width / 6
             if (change > 0) {
                 if (change < half) {
                     p1.style.transform = 'translateX(-100%)'
@@ -4847,7 +4847,7 @@
         }
         function p3handleTouchEnd(event) {
             var change = event.changedTouches[0].clientX - startingX
-            var half = screen.width / 7
+            var half = screen.width / 6
             if (change > 0) {
                 if (change < half) {
                     p2.style.transform = 'translateX(-200%)'
@@ -4911,7 +4911,7 @@
         }
         function p4handleTouchEnd(event) {
             var change = event.changedTouches[0].clientX - startingX
-            var half = screen.width / 7
+            var half = screen.width / 6
             if (change > 0) {
                 if (change < half) {
                     p3.style.transform = 'translateX(-300%)'
@@ -4975,7 +4975,7 @@
         }
         function p5handleTouchEnd(event) {
             var change = event.changedTouches[0].clientX - startingX
-            var half = screen.width / 7
+            var half = screen.width / 6
             if (change < half) {
                 p4.style.transform = 'translateX(-400%)'
                 p5.style.transform = 'translateX(-400%)'
