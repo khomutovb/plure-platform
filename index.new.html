@@ -66,6 +66,15 @@
             min-height: 100%;
             background: blue;
         }
+
+        .page5 {
+            display: flex;
+            min-width: 100%;
+            justify-content: center;
+            align-items: center;
+            min-height: 100%;
+            background: orange;
+        }
     </style>
 </head>
 
@@ -95,12 +104,19 @@
                 Page 4
             </span>
         </div>
+        <div class="page5" id="page5" ontouchstart="p5handleTouchStart(event)" ontouchmove="p5handleTouchMove(event)"
+            ontouchend="p5handleTouchEnd(event)">
+            <span class="center">
+                Page 5
+            </span>
+        </div>
     </div>
     <script>
         var p1 = document.querySelector('#page1')
         var p2 = document.querySelector('#page2')
         var p3 = document.querySelector('#page3')
         var p4 = document.querySelector('#page4')
+        var p5 = document.querySelector('#page5')
         var startingX;
         function p1handleTouchStart(event) {
             startingX = event.touches[0].clientX;
@@ -234,29 +250,80 @@
             p2.style.transition = ''
             p3.style.transition = ''
             p4.style.transition = ''
+            p5.style.transition = ''
         }
         function p4handleTouchMove(event) {
             var touch = event.touches[0]
             var change = touch.clientX - startingX
-            p1.style.transform = `translateX(${(change - screen.width * 3) < -(screen.width * 3) ? -(screen.width * 3) : change - screen.width * 3}px)`
-            p2.style.transform = `translateX(${(change - screen.width * 3) < -(screen.width * 3) ? -(screen.width * 3) : change - screen.width * 3}px)`
-            p3.style.transform = `translateX(${(change - screen.width * 3) < -(screen.width * 3) ? -(screen.width * 3) : change - screen.width * 3}px)`
-            p4.style.transform = `translateX(${(change - screen.width * 3) < -(screen.width * 3) ? -(screen.width * 3) : change - screen.width * 3}px)`
+            p1.style.transform = `translateX(${(change - screen.width * 3)}px)`
+            p2.style.transform = `translateX(${(change - screen.width * 3)}px)`
+            p3.style.transform = `translateX(${(change - screen.width * 3)}px)`
+            p4.style.transform = `translateX(${(change - screen.width * 3)}px)`
+            p5.style.transform = `translateX(${(change - screen.width * 3)}px)`
             event.preventDefault()
         }
         function p4handleTouchEnd(event) {
             var change = event.changedTouches[0].clientX - startingX
             var half = screen.width / 10
+            if (change > 0) {
+                if (change < half) {
+                    p3.style.transform = 'translateX(-300%)'
+                    p4.style.transform = 'translateX(-300%)'
+                    p3.style.transition = 'all .3s'
+                    p4.style.transition = 'all .3s'
+                } else {
+                    p3.style.transform = 'translateX(-200%)'
+                    p4.style.transform = 'translateX(-200%)'
+                    p3.style.transition = 'all .3s'
+                    p4.style.transition = 'all .3s'
+                }
+            }
+            else {
+                if (change < -half) {
+                    p5.style.transform = 'translateX(-400%)'
+                    p4.style.transform = 'translateX(-400%)'
+                    p4.style.transition = 'all .3s'
+                    p5.style.transition = 'all .3s'
+                } else {
+                    p4.style.transform = 'translateX(-300%)'
+                    p5.style.transform = 'translateX(-300%)'
+                    p4.style.transition = 'all .3s'
+                    p5.style.transition = 'all .3s'
+                }
+            }
+
+        }
+        function p5handleTouchStart(event) {
+            startingX = event.touches[0].clientX;
+            p1.style.transition = ''
+            p2.style.transition = ''
+            p3.style.transition = ''
+            p4.style.transition = ''
+            p5.style.transition = ''
+        }
+        function p5handleTouchMove(event) {
+            var touch = event.touches[0]
+            var change = touch.clientX - startingX
+            p1.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
+            p2.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
+            p3.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
+            p4.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
+            p5.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
+            event.preventDefault()
+        }
+        function p5handleTouchEnd(event) {
+            var change = event.changedTouches[0].clientX - startingX
+            var half = screen.width / 10
             if (change < half) {
-                p3.style.transform = 'translateX(-300%)'
-                p4.style.transform = 'translateX(-300%)'
-                p3.style.transition = 'all .3s'
+                p4.style.transform = 'translateX(-400%)'
+                p5.style.transform = 'translateX(-400%)'
                 p4.style.transition = 'all .3s'
+                p5.style.transition = 'all .3s'
             } else {
-                p3.style.transform = 'translateX(-200%)'
-                p4.style.transform = 'translateX(-200%)'
-                p3.style.transition = 'all .3s'
+                p4.style.transform = 'translateX(-300%)'
+                p5.style.transform = 'translateX(-300%)'
                 p4.style.transition = 'all .3s'
+                p5.style.transition = 'all .3s'
             }
 
         }
