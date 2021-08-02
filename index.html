@@ -4820,6 +4820,9 @@
                     let posY = element.offsetLeft;
                     element.classList.add('is-active')
                     circle.style.left = `${posY - 2}px`
+                    window.scroll({
+                        top: 0,
+                    });
                 }
             }
             else {
@@ -4838,6 +4841,9 @@
                     let posY = element.offsetLeft;
                     element.classList.add('is-active')
                     circle.style.left = `${posY - 2}px`
+                    window.scroll({
+                        top: 0,
+                    });
                 } else {
                     p3.style.transform = 'translateX(-100%)'
                     p2.style.transform = 'translateX(-100%)'
@@ -4848,9 +4854,6 @@
                     p5.style.transition = 'all .4s'
                 }
             }
-            window.scroll({
-                top: 0,
-            });
         }
         function p3handleTouchStart(event) {
             startingX = event.touches[0].clientX;
@@ -4906,6 +4909,9 @@
                     let posY = element.offsetLeft;
                     element.classList.add('is-active')
                     circle.style.left = `${posY + 2}px`
+                    window.scroll({
+                        top: 0,
+                    });
                 }
             }
             else {
@@ -4924,6 +4930,9 @@
                     let posY = element.offsetLeft;
                     element.classList.add('is-active')
                     circle.style.left = `${posY - 2}px`
+                    window.scroll({
+                        top: 0,
+                    });
                 } else {
                     p3.style.transform = 'translateX(-200%)'
                     p4.style.transform = 'translateX(-200%)'
@@ -4934,9 +4943,6 @@
                     p5.style.transition = 'all .4s'
                 }
             }
-            window.scroll({
-                top: 0,
-            });
 
         }
         function p4handleTouchStart(event) {
@@ -4990,6 +4996,9 @@
                     let posY = element.offsetLeft;
                     element.classList.add('is-active')
                     circle.style.left = `${posY - 2}px`
+                    window.scroll({
+                        top: 0,
+                    });
                 }
             }
             else {
@@ -5008,6 +5017,9 @@
                     let posY = element.offsetLeft;
                     element.classList.add('is-active')
                     circle.style.left = `${posY + 4}px`
+                    window.scroll({
+                        top: 0,
+                    });
                 } else {
                     p4.style.transform = 'translateX(-300%)'
                     p5.style.transform = 'translateX(-300%)'
@@ -5018,9 +5030,6 @@
                     p5.style.transition = 'all .4s'
                 }
             }
-            window.scroll({
-                top: 0,
-            });
 
         }
         function p5handleTouchStart(event) {
