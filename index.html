@@ -4732,9 +4732,11 @@
         function p1handleTouchMove(event) {
             var touch = event.touches[0]
             var change = startingX - touch.clientX
-            p1.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
-            p2.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
-            p3.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
+            if (change > 30 || change < -30) {
+                p1.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
+                p2.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
+                p3.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
+            }
             
         }
         function p1handleTouchEnd(event) {
@@ -4772,12 +4774,11 @@
         function p2handleTouchMove(event) {
             var touch = event.touches[0]
             var change = touch.clientX - startingX
-            /*             p1.style.transform = `translateX(${(change - screen.width) > 0 ? 0 : (change - screen.width) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width}px)`
-                        p2.style.transform = `translateX(${(change - screen.width) > 0 ? 0 : (change - screen.width) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width}px)`
-                        p3.style.transform = `translateX(${(change - screen.width) > 0 ? 0 : (change - screen.width) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width}px)` */
-            p1.style.transform = `translateX(${(change - screen.width)}px)`
-            p2.style.transform = `translateX(${(change - screen.width)}px)`
-            p3.style.transform = `translateX(${(change - screen.width)}px)`
+            if (change > 30 || change < -30) {
+                p1.style.transform = `translateX(${(change - screen.width)}px)`
+                p2.style.transform = `translateX(${(change - screen.width)}px)`
+                p3.style.transform = `translateX(${(change - screen.width)}px)`
+            }
             
         }
         function p2handleTouchEnd(event) {
@@ -4836,13 +4837,17 @@
         function p3handleTouchMove(event) {
             var touch = event.touches[0]
             var change = touch.clientX - startingX
+            console.log(Math.round(change))
+            if (change > 30 || change < -30) {
+                p1.style.transform = `translateX(${(change - screen.width * 2)}px)`
+                p2.style.transform = `translateX(${(change - screen.width * 2)}px)`
+                p3.style.transform = `translateX(${(change - screen.width * 2)}px)`
+                p4.style.transform = `translateX(${(change - screen.width * 2)}px)`
+            }
             /*          p1.style.transform = `translateX(${(change - screen.width * 2) > 0 ? 0 : (change - screen.width * 2) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width * 2}px)`
                         p2.style.transform = `translateX(${(change - screen.width * 2) > 0 ? 0 : (change - screen.width * 2) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width * 2}px)`
                         p3.style.transform = `translateX(${(change - screen.width * 2) > 0 ? 0 : (change - screen.width * 2) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width * 2}px)` */
-            p1.style.transform = `translateX(${(change - screen.width * 2)}px)`
-            p2.style.transform = `translateX(${(change - screen.width * 2)}px)`
-            p3.style.transform = `translateX(${(change - screen.width * 2)}px)`
-            p4.style.transform = `translateX(${(change - screen.width * 2)}px)`
+
             
         }
         function p3handleTouchEnd(event) {
@@ -4902,11 +4907,13 @@
         function p4handleTouchMove(event) {
             var touch = event.touches[0]
             var change = touch.clientX - startingX
-            p1.style.transform = `translateX(${(change - screen.width * 3)}px)`
-            p2.style.transform = `translateX(${(change - screen.width * 3)}px)`
-            p3.style.transform = `translateX(${(change - screen.width * 3)}px)`
-            p4.style.transform = `translateX(${(change - screen.width * 3)}px)`
-            p5.style.transform = `translateX(${(change - screen.width * 3)}px)`
+            if (change > 30 || change < -30) {
+                p1.style.transform = `translateX(${(change - screen.width * 3)}px)`
+                p2.style.transform = `translateX(${(change - screen.width * 3)}px)`
+                p3.style.transform = `translateX(${(change - screen.width * 3)}px)`
+                p4.style.transform = `translateX(${(change - screen.width * 3)}px)`
+                p5.style.transform = `translateX(${(change - screen.width * 3)}px)`
+            }
             
         }
         function p4handleTouchEnd(event) {
@@ -4966,11 +4973,14 @@
         function p5handleTouchMove(event) {
             var touch = event.touches[0]
             var change = touch.clientX - startingX
-            p1.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
-            p2.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
-            p3.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
-            p4.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
-            p5.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
+            console.log(change)
+            if (change > 30 || change < -30) {
+                p1.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
+                p2.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
+                p3.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
+                p4.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
+                p5.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
+            }
             
         }
         function p5handleTouchEnd(event) {
