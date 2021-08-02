@@ -89,12 +89,14 @@
     </div>
     <div class="page__content">
         <div class="slide__line">
-            <div class="slide shop__content">
+            <div class="slide shop__content" ontouchstart="p1handleTouchStart(event)"
+                ontouchmove="p1handleTouchMove(event)" ontouchend="p1handleTouchEnd(event)">
                 <div class="platform__container">
                     <h1 class="results__title">Shop</h1>
                 </div>
             </div>
-            <div class="slide results__content">
+            <div class="slide results__content" ontouchstart="p2handleTouchStart(event)"
+                ontouchmove="p2handleTouchMove(event)" ontouchend="p2handleTouchEnd(event)">
                 <div class="platform__container">
                     <h1 class="results__title">Results</h1>
                     <div class="results__list">
@@ -507,7 +509,8 @@
                     </div>
                 </div>
             </div>
-            <div class="slide lobby__content active">
+            <div class="slide lobby__content active" ontouchstart="p3handleTouchStart(event)"
+                ontouchmove="p3handleTouchMove(event)" ontouchend="p3handleTouchEnd(event)">
                 <div class="platform__container">
                     <div class="special-offers__list">
                         <div class="special-offers__item red">
@@ -951,12 +954,14 @@
                     </div>
                 </div>
             </div>
-            <div class="slide gifts__content">
+            <div class="slide gifts__content" ontouchstart="p4handleTouchStart(event)"
+                ontouchmove="p4handleTouchMove(event)" ontouchend="p4handleTouchEnd(event)">
                 <div class="platform__container">
                     <h1 class="results__title">Gifts</h1>
                 </div>
             </div>
-            <div class="slide account__content">
+            <div class="slide account__content" ontouchstart="p5handleTouchStart(event)"
+                ontouchmove="p5handleTouchMove(event)" ontouchend="p5handleTouchEnd(event)">
                 <div class="platform__container">
                     <h1 class="results__title">Account</h1>
                     <div class="avatar__img">
@@ -1696,7 +1701,9 @@
         footerItem.forEach((element) => {
             element.addEventListener('click', (event) => {
                 circle.classList.add('animation')
-                slideLine.classList.add('animation')
+                slides.forEach((element) => {
+                    element.classList.add('animation')
+                })
                 removeActiveClass()
                 element.classList.add('is-active')
                 let posY = element.offsetLeft;
@@ -1704,14 +1711,15 @@
                 window.scroll({
                     top: 0,
                 });
+                p1.style.transition = ''
+                p2.style.transition = ''
+                p3.style.transition = ''
+                p4.style.transition = ''
+                p5.style.transition = ''
                 if (event.currentTarget.classList.contains('shop')) {
                     slideLine.className = 'slide__line animation shop'
                     slides.forEach((element) => {
-                        if (!(element.classList.contains('shop__content'))) {
-                            element.classList.remove('active')
-                        } else {
-                            element.classList.add('active')
-                        }
+                        element.style.transform = 'translateX(0%)'
                         slideLine.style.height = `${slidesShop.clientHeight < heightBody ? heightBody : slidesShop.clientHeight}px`
                     })
                 }
@@ -1719,33 +1727,21 @@
                     circle.style.left = `${posY + 2}px`
                     slideLine.className = 'slide__line animation results'
                     slides.forEach((element) => {
-                        if (!(element.classList.contains('results__content'))) {
-                            element.classList.remove('active')
-                        } else {
-                            element.classList.add('active')
-                        }
+                        element.style.transform = 'translateX(-100%)'
                         slideLine.style.height = `${slidesResults.clientHeight < heightBody ? heightBody : slidesResults.clientHeight}px`
                     })
                 }
                 if (event.currentTarget.classList.contains('lobby')) {
                     slideLine.className = 'slide__line animation lobby'
                     slides.forEach((element) => {
-                        if (!(element.classList.contains('lobby__content'))) {
-                            element.classList.remove('active')
-                        } else {
-                            element.classList.add('active')
-                        }
+                        element.style.transform = 'translateX(-200%)'
                         slideLine.style.height = `${slidesLobby.clientHeight}px`
                     })
                 }
                 if (event.currentTarget.classList.contains('gifts')) {
                     slideLine.className = 'slide__line animation gifts'
                     slides.forEach((element) => {
-                        if (!(element.classList.contains('gifts__content'))) {
-                            element.classList.remove('active')
-                        } else {
-                            element.classList.add('active')
-                        }
+                        element.style.transform = 'translateX(-300%)'
                         slideLine.style.height = `${slidesGifts.clientHeight < heightBody ? heightBody : slidesGifts.clientHeight}px`
                     })
                 }
@@ -1753,11 +1749,7 @@
                     circle.style.left = `${posY + 5}px`
                     slideLine.className = 'slide__line animation account'
                     slides.forEach((element) => {
-                        if (!(element.classList.contains('account__content'))) {
-                            element.classList.remove('active')
-                        } else {
-                            element.classList.add('active')
-                        }
+                        element.style.transform = 'translateX(-400%)'
                         slideLine.style.height = `${slidesAccount.clientHeight < heightBody ? heightBody : slidesAccount.clientHeight}px`
                     })
                 }
@@ -1876,6 +1868,285 @@
             leaderboad.classList.remove('is-active')
             leaderboadInner.classList.remove('is-active')
             document.querySelector('body').classList.remove('overflow')
+        }
+    </script>
+    <script>
+        var p1 = document.querySelector('.shop__content')
+        var p2 = document.querySelector('.results__content')
+        var p3 = document.querySelector('.lobby__content')
+        var p4 = document.querySelector('.gifts__content')
+        var p5 = document.querySelector('.account__content')
+        var startingX;
+        function p1handleTouchStart(event) {
+            startingX = event.touches[0].clientX;
+            slides.forEach((element) => {
+                element.classList.remove('animation')
+            })
+            p1.style.transition = ''
+            p2.style.transition = ''
+            p3.style.transition = ''
+            p4.style.transition = ''
+            p5.style.transition = ''
+        }
+        function p1handleTouchMove(event) {
+            var touch = event.touches[0]
+            var change = startingX - touch.clientX
+            p1.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
+            p2.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
+            p3.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
+            event.preventDefault()
+        }
+        function p1handleTouchEnd(event) {
+            var change = startingX - event.changedTouches[0].clientX
+            var half = screen.width / 10
+            if (change < half) {
+                p2.style.transform = 'translateX(0)'
+                p1.style.transform = 'translateX(0)'
+                p1.style.transition = 'all .4s'
+                p2.style.transition = 'all .4s'
+                p3.style.transition = 'all .4s'
+                p4.style.transition = 'all .4s'
+                p5.style.transition = 'all .4s'
+            } else {
+                p1.style.transform = 'translateX(-100%)'
+                p2.style.transform = 'translateX(-100%)'
+                p1.style.transition = 'all .4s'
+                p2.style.transition = 'all .4s'
+                p3.style.transition = 'all .4s'
+                p4.style.transition = 'all .4s'
+                p5.style.transition = 'all .4s'
+            }
+        }
+        function p2handleTouchStart(event) {
+            startingX = event.touches[0].clientX;
+            slides.forEach((element) => {
+                element.classList.remove('animation')
+            })
+            p1.style.transition = ''
+            p2.style.transition = ''
+            p3.style.transition = ''
+            p4.style.transition = ''
+            p5.style.transition = ''
+        }
+        function p2handleTouchMove(event) {
+            var touch = event.touches[0]
+            var change = touch.clientX - startingX
+            /*             p1.style.transform = `translateX(${(change - screen.width) > 0 ? 0 : (change - screen.width) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width}px)`
+                        p2.style.transform = `translateX(${(change - screen.width) > 0 ? 0 : (change - screen.width) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width}px)`
+                        p3.style.transform = `translateX(${(change - screen.width) > 0 ? 0 : (change - screen.width) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width}px)` */
+            p1.style.transform = `translateX(${(change - screen.width)}px)`
+            p2.style.transform = `translateX(${(change - screen.width)}px)`
+            p3.style.transform = `translateX(${(change - screen.width)}px)`
+            event.preventDefault()
+        }
+        function p2handleTouchEnd(event) {
+            var change = event.changedTouches[0].clientX - startingX
+            var half = screen.width / 10
+            if (change > 0) {
+                if (change < half) {
+                    p1.style.transform = 'translateX(-100%)'
+                    p2.style.transform = 'translateX(-100%)'
+                    p1.style.transition = 'all .4s'
+                    p2.style.transition = 'all .4s'
+                    p3.style.transition = 'all .4s'
+                    p4.style.transition = 'all .4s'
+                    p5.style.transition = 'all .4s'
+                } else {
+                    p1.style.transform = 'translateX(0)'
+                    p2.style.transform = 'translateX(0)'
+                    p1.style.transition = 'all .4s'
+                    p2.style.transition = 'all .4s'
+                    p3.style.transition = 'all .4s'
+                    p4.style.transition = 'all .4s'
+                    p5.style.transition = 'all .4s'
+                }
+            }
+            else {
+                if (change < -half) {
+                    p3.style.transform = 'translateX(-200%)'
+                    p2.style.transform = 'translateX(-200%)'
+                    p1.style.transition = 'all .4s'
+                    p2.style.transition = 'all .4s'
+                    p3.style.transition = 'all .4s'
+                    p4.style.transition = 'all .4s'
+                    p5.style.transition = 'all .4s'
+                } else {
+                    p3.style.transform = 'translateX(-100%)'
+                    p2.style.transform = 'translateX(-100%)'
+                    p1.style.transition = 'all .4s'
+                    p2.style.transition = 'all .4s'
+                    p3.style.transition = 'all .4s'
+                    p4.style.transition = 'all .4s'
+                    p5.style.transition = 'all .4s'
+                }
+            }
+        }
+        function p3handleTouchStart(event) {
+            startingX = event.touches[0].clientX;
+            slides.forEach((element) => {
+                element.classList.remove('animation')
+            })
+            p1.style.transition = ''
+            p2.style.transition = ''
+            p3.style.transition = ''
+            p4.style.transition = ''
+            p5.style.transition = ''
+        }
+        function p3handleTouchMove(event) {
+            var touch = event.touches[0]
+            var change = touch.clientX - startingX
+            /*          p1.style.transform = `translateX(${(change - screen.width * 2) > 0 ? 0 : (change - screen.width * 2) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width * 2}px)`
+                        p2.style.transform = `translateX(${(change - screen.width * 2) > 0 ? 0 : (change - screen.width * 2) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width * 2}px)`
+                        p3.style.transform = `translateX(${(change - screen.width * 2) > 0 ? 0 : (change - screen.width * 2) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width * 2}px)` */
+            p1.style.transform = `translateX(${(change - screen.width * 2)}px)`
+            p2.style.transform = `translateX(${(change - screen.width * 2)}px)`
+            p3.style.transform = `translateX(${(change - screen.width * 2)}px)`
+            p4.style.transform = `translateX(${(change - screen.width * 2)}px)`
+            event.preventDefault()
+        }
+        function p3handleTouchEnd(event) {
+            var change = event.changedTouches[0].clientX - startingX
+            var half = screen.width / 10
+            if (change > 0) {
+                if (change < half) {
+                    p2.style.transform = 'translateX(-200%)'
+                    p3.style.transform = 'translateX(-200%)'
+                    p1.style.transition = 'all .4s'
+                    p2.style.transition = 'all .4s'
+                    p3.style.transition = 'all .4s'
+                    p4.style.transition = 'all .4s'
+                    p5.style.transition = 'all .4s'
+                } else {
+                    p2.style.transform = 'translateX(-100%)'
+                    p3.style.transform = 'translateX(-100%)'
+                    p1.style.transition = 'all .4s'
+                    p2.style.transition = 'all .4s'
+                    p3.style.transition = 'all .4s'
+                    p4.style.transition = 'all .4s'
+                    p5.style.transition = 'all .4s'
+                }
+            }
+            else {
+                if (change < -half) {
+                    p4.style.transform = 'translateX(-300%)'
+                    p3.style.transform = 'translateX(-300%)'
+                    p3.style.transition = 'all .4s'
+                    p4.style.transition = 'all .4s'
+                } else {
+                    p3.style.transform = 'translateX(-200%)'
+                    p4.style.transform = 'translateX(-200%)'
+                    p3.style.transition = 'all .4s'
+                    p4.style.transition = 'all .4s'
+                }
+            }
+
+        }
+        function p4handleTouchStart(event) {
+            startingX = event.touches[0].clientX;
+            slides.forEach((element) => {
+                element.classList.remove('animation')
+            })
+            p1.style.transition = ''
+            p2.style.transition = ''
+            p3.style.transition = ''
+            p4.style.transition = ''
+            p5.style.transition = ''
+        }
+        function p4handleTouchMove(event) {
+            var touch = event.touches[0]
+            var change = touch.clientX - startingX
+            p1.style.transform = `translateX(${(change - screen.width * 3)}px)`
+            p2.style.transform = `translateX(${(change - screen.width * 3)}px)`
+            p3.style.transform = `translateX(${(change - screen.width * 3)}px)`
+            p4.style.transform = `translateX(${(change - screen.width * 3)}px)`
+            p5.style.transform = `translateX(${(change - screen.width * 3)}px)`
+            event.preventDefault()
+        }
+        function p4handleTouchEnd(event) {
+            var change = event.changedTouches[0].clientX - startingX
+            var half = screen.width / 10
+            if (change > 0) {
+                if (change < half) {
+                    p3.style.transform = 'translateX(-300%)'
+                    p4.style.transform = 'translateX(-300%)'
+                    p1.style.transition = 'all .4s'
+                    p2.style.transition = 'all .4s'
+                    p3.style.transition = 'all .4s'
+                    p4.style.transition = 'all .4s'
+                    p5.style.transition = 'all .4s'
+                } else {
+                    p3.style.transform = 'translateX(-200%)'
+                    p4.style.transform = 'translateX(-200%)'
+                    p1.style.transition = 'all .4s'
+                    p2.style.transition = 'all .4s'
+                    p3.style.transition = 'all .4s'
+                    p4.style.transition = 'all .4s'
+                    p5.style.transition = 'all .4s'
+                }
+            }
+            else {
+                if (change < -half) {
+                    p5.style.transform = 'translateX(-400%)'
+                    p4.style.transform = 'translateX(-400%)'
+                    p1.style.transition = 'all .4s'
+                    p2.style.transition = 'all .4s'
+                    p3.style.transition = 'all .4s'
+                    p4.style.transition = 'all .4s'
+                    p5.style.transition = 'all .4s'
+                } else {
+                    p4.style.transform = 'translateX(-300%)'
+                    p5.style.transform = 'translateX(-300%)'
+                    p1.style.transition = 'all .4s'
+                    p2.style.transition = 'all .4s'
+                    p3.style.transition = 'all .4s'
+                    p4.style.transition = 'all .4s'
+                    p5.style.transition = 'all .4s'
+                }
+            }
+
+        }
+        function p5handleTouchStart(event) {
+            startingX = event.touches[0].clientX;
+            slides.forEach((element) => {
+                element.classList.remove('animation')
+            })
+            p1.style.transition = ''
+            p2.style.transition = ''
+            p3.style.transition = ''
+            p4.style.transition = ''
+            p5.style.transition = ''
+        }
+        function p5handleTouchMove(event) {
+            var touch = event.touches[0]
+            var change = touch.clientX - startingX
+            p1.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
+            p2.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
+            p3.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
+            p4.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
+            p5.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
+            event.preventDefault()
+        }
+        function p5handleTouchEnd(event) {
+            var change = event.changedTouches[0].clientX - startingX
+            var half = screen.width / 10
+            if (change < half) {
+                p4.style.transform = 'translateX(-400%)'
+                p5.style.transform = 'translateX(-400%)'
+                p1.style.transition = 'all .4s'
+                p2.style.transition = 'all .4s'
+                p3.style.transition = 'all .4s'
+                p4.style.transition = 'all .4s'
+                p5.style.transition = 'all .4s'
+            } else {
+                p4.style.transform = 'translateX(-300%)'
+                p5.style.transform = 'translateX(-300%)'
+                p1.style.transition = 'all .4s'
+                p2.style.transition = 'all .4s'
+                p3.style.transition = 'all .4s'
+                p4.style.transition = 'all .4s'
+                p5.style.transition = 'all .4s'
+            }
+
         }
     </script>
 </body>
