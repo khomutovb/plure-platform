@@ -4728,6 +4728,7 @@
             p3.style.transition = ''
             p4.style.transition = ''
             p5.style.transition = ''
+            circle.classList.add('animation')
         }
         function p1handleTouchMove(event) {
             var touch = event.touches[0]
@@ -4737,7 +4738,7 @@
                 p2.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
                 p3.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
             }
-            
+
         }
         function p1handleTouchEnd(event) {
             var change = startingX - event.changedTouches[0].clientX
@@ -4758,6 +4759,16 @@
                 p3.style.transition = 'all .4s'
                 p4.style.transition = 'all .4s'
                 p5.style.transition = 'all .4s'
+                let element = document.querySelector('.footer__item.results')
+                footerItem.forEach((element) => {
+                    element.classList.remove('is-active')
+                })
+                let posY = element.offsetLeft;
+                element.classList.add('is-active')
+                circle.style.left = `${posY + 2}px`
+                window.scroll({
+                    top: 0,
+                });
             }
         }
         function p2handleTouchStart(event) {
@@ -4770,6 +4781,7 @@
             p3.style.transition = ''
             p4.style.transition = ''
             p5.style.transition = ''
+            circle.classList.add('animation')
         }
         function p2handleTouchMove(event) {
             var touch = event.touches[0]
@@ -4779,7 +4791,7 @@
                 p2.style.transform = `translateX(${(change - screen.width)}px)`
                 p3.style.transform = `translateX(${(change - screen.width)}px)`
             }
-            
+
         }
         function p2handleTouchEnd(event) {
             var change = event.changedTouches[0].clientX - startingX
@@ -4801,6 +4813,13 @@
                     p3.style.transition = 'all .4s'
                     p4.style.transition = 'all .4s'
                     p5.style.transition = 'all .4s'
+                    let element = document.querySelector('.footer__item.shop')
+                    footerItem.forEach((element) => {
+                        element.classList.remove('is-active')
+                    })
+                    let posY = element.offsetLeft;
+                    element.classList.add('is-active')
+                    circle.style.left = `${posY - 2}px`
                 }
             }
             else {
@@ -4812,6 +4831,13 @@
                     p3.style.transition = 'all .4s'
                     p4.style.transition = 'all .4s'
                     p5.style.transition = 'all .4s'
+                    let element = document.querySelector('.footer__item.lobby')
+                    footerItem.forEach((element) => {
+                        element.classList.remove('is-active')
+                    })
+                    let posY = element.offsetLeft;
+                    element.classList.add('is-active')
+                    circle.style.left = `${posY - 2}px`
                 } else {
                     p3.style.transform = 'translateX(-100%)'
                     p2.style.transform = 'translateX(-100%)'
@@ -4822,6 +4848,9 @@
                     p5.style.transition = 'all .4s'
                 }
             }
+            window.scroll({
+                top: 0,
+            });
         }
         function p3handleTouchStart(event) {
             startingX = event.touches[0].clientX;
@@ -4833,11 +4862,11 @@
             p3.style.transition = ''
             p4.style.transition = ''
             p5.style.transition = ''
+            circle.classList.add('animation')
         }
         function p3handleTouchMove(event) {
             var touch = event.touches[0]
             var change = touch.clientX - startingX
-            console.log(Math.round(change))
             if (change > 30 || change < -30) {
                 p1.style.transform = `translateX(${(change - screen.width * 2)}px)`
                 p2.style.transform = `translateX(${(change - screen.width * 2)}px)`
@@ -4848,7 +4877,7 @@
                         p2.style.transform = `translateX(${(change - screen.width * 2) > 0 ? 0 : (change - screen.width * 2) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width * 2}px)`
                         p3.style.transform = `translateX(${(change - screen.width * 2) > 0 ? 0 : (change - screen.width * 2) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width * 2}px)` */
 
-            
+
         }
         function p3handleTouchEnd(event) {
             var change = event.changedTouches[0].clientX - startingX
@@ -4870,6 +4899,13 @@
                     p3.style.transition = 'all .4s'
                     p4.style.transition = 'all .4s'
                     p5.style.transition = 'all .4s'
+                    let element = document.querySelector('.footer__item.results')
+                    footerItem.forEach((element) => {
+                        element.classList.remove('is-active')
+                    })
+                    let posY = element.offsetLeft;
+                    element.classList.add('is-active')
+                    circle.style.left = `${posY - 2}px`
                 }
             }
             else {
@@ -4881,6 +4917,13 @@
                     p3.style.transition = 'all .4s'
                     p4.style.transition = 'all .4s'
                     p5.style.transition = 'all .4s'
+                    let element = document.querySelector('.footer__item.gifts')
+                    footerItem.forEach((element) => {
+                        element.classList.remove('is-active')
+                    })
+                    let posY = element.offsetLeft;
+                    element.classList.add('is-active')
+                    circle.style.left = `${posY - 2}px`
                 } else {
                     p3.style.transform = 'translateX(-200%)'
                     p4.style.transform = 'translateX(-200%)'
@@ -4891,6 +4934,9 @@
                     p5.style.transition = 'all .4s'
                 }
             }
+            window.scroll({
+                top: 0,
+            });
 
         }
         function p4handleTouchStart(event) {
@@ -4903,6 +4949,7 @@
             p3.style.transition = ''
             p4.style.transition = ''
             p5.style.transition = ''
+            circle.classList.add('animation')
         }
         function p4handleTouchMove(event) {
             var touch = event.touches[0]
@@ -4914,7 +4961,7 @@
                 p4.style.transform = `translateX(${(change - screen.width * 3)}px)`
                 p5.style.transform = `translateX(${(change - screen.width * 3)}px)`
             }
-            
+
         }
         function p4handleTouchEnd(event) {
             var change = event.changedTouches[0].clientX - startingX
@@ -4936,6 +4983,13 @@
                     p3.style.transition = 'all .4s'
                     p4.style.transition = 'all .4s'
                     p5.style.transition = 'all .4s'
+                    let element = document.querySelector('.footer__item.lobby')
+                    footerItem.forEach((element) => {
+                        element.classList.remove('is-active')
+                    })
+                    let posY = element.offsetLeft;
+                    element.classList.add('is-active')
+                    circle.style.left = `${posY - 2}px`
                 }
             }
             else {
@@ -4947,6 +5001,13 @@
                     p3.style.transition = 'all .4s'
                     p4.style.transition = 'all .4s'
                     p5.style.transition = 'all .4s'
+                    let element = document.querySelector('.footer__item.account')
+                    footerItem.forEach((element) => {
+                        element.classList.remove('is-active')
+                    })
+                    let posY = element.offsetLeft;
+                    element.classList.add('is-active')
+                    circle.style.left = `${posY + 4}px`
                 } else {
                     p4.style.transform = 'translateX(-300%)'
                     p5.style.transform = 'translateX(-300%)'
@@ -4957,6 +5018,9 @@
                     p5.style.transition = 'all .4s'
                 }
             }
+            window.scroll({
+                top: 0,
+            });
 
         }
         function p5handleTouchStart(event) {
@@ -4969,11 +5033,11 @@
             p3.style.transition = ''
             p4.style.transition = ''
             p5.style.transition = ''
+            circle.classList.add('animation')
         }
         function p5handleTouchMove(event) {
             var touch = event.touches[0]
             var change = touch.clientX - startingX
-            console.log(change)
             if (change > 30 || change < -30) {
                 p1.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
                 p2.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
@@ -4981,7 +5045,7 @@
                 p4.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
                 p5.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
             }
-            
+
         }
         function p5handleTouchEnd(event) {
             var change = event.changedTouches[0].clientX - startingX
@@ -5002,6 +5066,16 @@
                 p3.style.transition = 'all .4s'
                 p4.style.transition = 'all .4s'
                 p5.style.transition = 'all .4s'
+                let element = document.querySelector('.footer__item.gifts')
+                footerItem.forEach((element) => {
+                    element.classList.remove('is-active')
+                })
+                let posY = element.offsetLeft;
+                element.classList.add('is-active')
+                circle.style.left = `${posY - 2}px`
+                window.scroll({
+                    top: 0,
+                });
             }
 
         }
