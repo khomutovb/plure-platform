@@ -4735,7 +4735,7 @@
             p1.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
             p2.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
             p3.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
-
+            
         }
         function p1handleTouchEnd(event) {
             var change = startingX - event.changedTouches[0].clientX
@@ -4757,9 +4757,6 @@
                 p4.style.transition = 'all .4s'
                 p5.style.transition = 'all .4s'
             }
-            window.scroll({
-                top: 0,
-            });
         }
         function p2handleTouchStart(event) {
             startingX = event.touches[0].clientX;
@@ -4781,7 +4778,7 @@
             p1.style.transform = `translateX(${(change - screen.width)}px)`
             p2.style.transform = `translateX(${(change - screen.width)}px)`
             p3.style.transform = `translateX(${(change - screen.width)}px)`
-
+            
         }
         function p2handleTouchEnd(event) {
             var change = event.changedTouches[0].clientX - startingX
@@ -4824,9 +4821,6 @@
                     p5.style.transition = 'all .4s'
                 }
             }
-            window.scroll({
-                top: 0,
-            });
         }
         function p3handleTouchStart(event) {
             startingX = event.touches[0].clientX;
@@ -4849,7 +4843,7 @@
             p2.style.transform = `translateX(${(change - screen.width * 2)}px)`
             p3.style.transform = `translateX(${(change - screen.width * 2)}px)`
             p4.style.transform = `translateX(${(change - screen.width * 2)}px)`
-
+            
         }
         function p3handleTouchEnd(event) {
             var change = event.changedTouches[0].clientX - startingX
@@ -4892,9 +4886,6 @@
                     p5.style.transition = 'all .4s'
                 }
             }
-            window.scroll({
-                top: 0,
-            });
 
         }
         function p4handleTouchStart(event) {
@@ -4916,7 +4907,7 @@
             p3.style.transform = `translateX(${(change - screen.width * 3)}px)`
             p4.style.transform = `translateX(${(change - screen.width * 3)}px)`
             p5.style.transform = `translateX(${(change - screen.width * 3)}px)`
-
+            
         }
         function p4handleTouchEnd(event) {
             var change = event.changedTouches[0].clientX - startingX
@@ -4959,9 +4950,6 @@
                     p5.style.transition = 'all .4s'
                 }
             }
-            window.scroll({
-                top: 0,
-            });
 
         }
         function p5handleTouchStart(event) {
@@ -4983,7 +4971,7 @@
             p3.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
             p4.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
             p5.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
-
+            
         }
         function p5handleTouchEnd(event) {
             var change = event.changedTouches[0].clientX - startingX
@@ -5005,9 +4993,7 @@
                 p4.style.transition = 'all .4s'
                 p5.style.transition = 'all .4s'
             }
-            window.scroll({
-                top: 0,
-            });
+
         }
     </script>
 </body>
