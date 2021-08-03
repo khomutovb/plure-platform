@@ -4723,17 +4723,13 @@
             slides.forEach((element) => {
                 element.classList.remove('animation')
             })
-            p1.style.transition = ''
-            p2.style.transition = ''
-            p3.style.transition = ''
-            p4.style.transition = ''
-            p5.style.transition = ''
+            removeTransition()
             circle.classList.add('animation')
         }
         function p1handleTouchMove(event) {
             var touch = event.touches[0]
             var change = startingX - touch.clientX
-            if (change > 30 || change < -30) {
+            if (change > 15 || change < -15) {
                 p1.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
                 p2.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
                 p3.style.transform = `translateX(-${change > screen.width ? screen.width : change}px)`
@@ -4746,19 +4742,11 @@
             if (change < half) {
                 p2.style.transform = 'translateX(0)'
                 p1.style.transform = 'translateX(0)'
-                p1.style.transition = 'all .4s'
-                p2.style.transition = 'all .4s'
-                p3.style.transition = 'all .4s'
-                p4.style.transition = 'all .4s'
-                p5.style.transition = 'all .4s'
+                addTransition()
             } else {
                 p1.style.transform = 'translateX(-100%)'
                 p2.style.transform = 'translateX(-100%)'
-                p1.style.transition = 'all .4s'
-                p2.style.transition = 'all .4s'
-                p3.style.transition = 'all .4s'
-                p4.style.transition = 'all .4s'
-                p5.style.transition = 'all .4s'
+                addTransition()
                 let element = document.querySelector('.footer__item.results')
                 footerItem.forEach((element) => {
                     element.classList.remove('is-active')
@@ -4777,17 +4765,13 @@
             slides.forEach((element) => {
                 element.classList.remove('animation')
             })
-            p1.style.transition = ''
-            p2.style.transition = ''
-            p3.style.transition = ''
-            p4.style.transition = ''
-            p5.style.transition = ''
+            removeTransition()
             circle.classList.add('animation')
         }
         function p2handleTouchMove(event) {
             var touch = event.touches[0]
             var change = touch.clientX - startingX
-            if (change > 30 || change < -30) {
+            if (change > 15 || change < -15) {
                 p1.style.transform = `translateX(${(change - screen.width)}px)`
                 p2.style.transform = `translateX(${(change - screen.width)}px)`
                 p3.style.transform = `translateX(${(change - screen.width)}px)`
@@ -4801,19 +4785,11 @@
                 if (change < half) {
                     p1.style.transform = 'translateX(-100%)'
                     p2.style.transform = 'translateX(-100%)'
-                    p1.style.transition = 'all .4s'
-                    p2.style.transition = 'all .4s'
-                    p3.style.transition = 'all .4s'
-                    p4.style.transition = 'all .4s'
-                    p5.style.transition = 'all .4s'
+                    addTransition()
                 } else {
                     p1.style.transform = 'translateX(0)'
                     p2.style.transform = 'translateX(0)'
-                    p1.style.transition = 'all .4s'
-                    p2.style.transition = 'all .4s'
-                    p3.style.transition = 'all .4s'
-                    p4.style.transition = 'all .4s'
-                    p5.style.transition = 'all .4s'
+                    addTransition()
                     let element = document.querySelector('.footer__item.shop')
                     footerItem.forEach((element) => {
                         element.classList.remove('is-active')
@@ -4831,11 +4807,7 @@
                 if (change < -half) {
                     p3.style.transform = 'translateX(-200%)'
                     p2.style.transform = 'translateX(-200%)'
-                    p1.style.transition = 'all .4s'
-                    p2.style.transition = 'all .4s'
-                    p3.style.transition = 'all .4s'
-                    p4.style.transition = 'all .4s'
-                    p5.style.transition = 'all .4s'
+                    addTransition()
                     let element = document.querySelector('.footer__item.lobby')
                     footerItem.forEach((element) => {
                         element.classList.remove('is-active')
@@ -4850,11 +4822,7 @@
                 } else {
                     p3.style.transform = 'translateX(-100%)'
                     p2.style.transform = 'translateX(-100%)'
-                    p1.style.transition = 'all .4s'
-                    p2.style.transition = 'all .4s'
-                    p3.style.transition = 'all .4s'
-                    p4.style.transition = 'all .4s'
-                    p5.style.transition = 'all .4s'
+                    addTransition()
                 }
             }
         }
@@ -4863,25 +4831,18 @@
             slides.forEach((element) => {
                 element.classList.remove('animation')
             })
-            p1.style.transition = ''
-            p2.style.transition = ''
-            p3.style.transition = ''
-            p4.style.transition = ''
-            p5.style.transition = ''
+            removeTransition()
             circle.classList.add('animation')
         }
         function p3handleTouchMove(event) {
             var touch = event.touches[0]
             var change = touch.clientX - startingX
-            if (change > 30 || change < -30) {
+            if (change > 15 || change < -15) {
                 p1.style.transform = `translateX(${(change - screen.width * 2)}px)`
                 p2.style.transform = `translateX(${(change - screen.width * 2)}px)`
                 p3.style.transform = `translateX(${(change - screen.width * 2)}px)`
                 p4.style.transform = `translateX(${(change - screen.width * 2)}px)`
             }
-            /*          p1.style.transform = `translateX(${(change - screen.width * 2) > 0 ? 0 : (change - screen.width * 2) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width * 2}px)`
-                        p2.style.transform = `translateX(${(change - screen.width * 2) > 0 ? 0 : (change - screen.width * 2) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width * 2}px)`
-                        p3.style.transform = `translateX(${(change - screen.width * 2) > 0 ? 0 : (change - screen.width * 2) < (-screen.width * 2) ? -(screen.width * 2) : change - screen.width * 2}px)` */
 
 
         }
@@ -4892,19 +4853,11 @@
                 if (change < half) {
                     p2.style.transform = 'translateX(-200%)'
                     p3.style.transform = 'translateX(-200%)'
-                    p1.style.transition = 'all .4s'
-                    p2.style.transition = 'all .4s'
-                    p3.style.transition = 'all .4s'
-                    p4.style.transition = 'all .4s'
-                    p5.style.transition = 'all .4s'
+                    addTransition()
                 } else {
                     p2.style.transform = 'translateX(-100%)'
                     p3.style.transform = 'translateX(-100%)'
-                    p1.style.transition = 'all .4s'
-                    p2.style.transition = 'all .4s'
-                    p3.style.transition = 'all .4s'
-                    p4.style.transition = 'all .4s'
-                    p5.style.transition = 'all .4s'
+                    addTransition()
                     let element = document.querySelector('.footer__item.results')
                     footerItem.forEach((element) => {
                         element.classList.remove('is-active')
@@ -4922,11 +4875,7 @@
                 if (change < -half) {
                     p4.style.transform = 'translateX(-300%)'
                     p3.style.transform = 'translateX(-300%)'
-                    p1.style.transition = 'all .4s'
-                    p2.style.transition = 'all .4s'
-                    p3.style.transition = 'all .4s'
-                    p4.style.transition = 'all .4s'
-                    p5.style.transition = 'all .4s'
+                    addTransition()
                     let element = document.querySelector('.footer__item.gifts')
                     footerItem.forEach((element) => {
                         element.classList.remove('is-active')
@@ -4941,11 +4890,7 @@
                 } else {
                     p3.style.transform = 'translateX(-200%)'
                     p4.style.transform = 'translateX(-200%)'
-                    p1.style.transition = 'all .4s'
-                    p2.style.transition = 'all .4s'
-                    p3.style.transition = 'all .4s'
-                    p4.style.transition = 'all .4s'
-                    p5.style.transition = 'all .4s'
+                    addTransition()
                 }
             }
 
@@ -4955,17 +4900,13 @@
             slides.forEach((element) => {
                 element.classList.remove('animation')
             })
-            p1.style.transition = ''
-            p2.style.transition = ''
-            p3.style.transition = ''
-            p4.style.transition = ''
-            p5.style.transition = ''
+            removeTransition()
             circle.classList.add('animation')
         }
         function p4handleTouchMove(event) {
             var touch = event.touches[0]
             var change = touch.clientX - startingX
-            if (change > 30 || change < -30) {
+            if (change > 15 || change < -15) {
                 p1.style.transform = `translateX(${(change - screen.width * 3)}px)`
                 p2.style.transform = `translateX(${(change - screen.width * 3)}px)`
                 p3.style.transform = `translateX(${(change - screen.width * 3)}px)`
@@ -4981,19 +4922,11 @@
                 if (change < half) {
                     p3.style.transform = 'translateX(-300%)'
                     p4.style.transform = 'translateX(-300%)'
-                    p1.style.transition = 'all .4s'
-                    p2.style.transition = 'all .4s'
-                    p3.style.transition = 'all .4s'
-                    p4.style.transition = 'all .4s'
-                    p5.style.transition = 'all .4s'
+                    addTransition()
                 } else {
                     p3.style.transform = 'translateX(-200%)'
                     p4.style.transform = 'translateX(-200%)'
-                    p1.style.transition = 'all .4s'
-                    p2.style.transition = 'all .4s'
-                    p3.style.transition = 'all .4s'
-                    p4.style.transition = 'all .4s'
-                    p5.style.transition = 'all .4s'
+                    addTransition()
                     let element = document.querySelector('.footer__item.lobby')
                     footerItem.forEach((element) => {
                         element.classList.remove('is-active')
@@ -5011,11 +4944,7 @@
                 if (change < -half) {
                     p5.style.transform = 'translateX(-400%)'
                     p4.style.transform = 'translateX(-400%)'
-                    p1.style.transition = 'all .4s'
-                    p2.style.transition = 'all .4s'
-                    p3.style.transition = 'all .4s'
-                    p4.style.transition = 'all .4s'
-                    p5.style.transition = 'all .4s'
+                    addTransition()
                     let element = document.querySelector('.footer__item.account')
                     footerItem.forEach((element) => {
                         element.classList.remove('is-active')
@@ -5030,11 +4959,7 @@
                 } else {
                     p4.style.transform = 'translateX(-300%)'
                     p5.style.transform = 'translateX(-300%)'
-                    p1.style.transition = 'all .4s'
-                    p2.style.transition = 'all .4s'
-                    p3.style.transition = 'all .4s'
-                    p4.style.transition = 'all .4s'
-                    p5.style.transition = 'all .4s'
+                    addTransition()
                 }
             }
 
@@ -5044,17 +4969,13 @@
             slides.forEach((element) => {
                 element.classList.remove('animation')
             })
-            p1.style.transition = ''
-            p2.style.transition = ''
-            p3.style.transition = ''
-            p4.style.transition = ''
-            p5.style.transition = ''
+            removeTransition()
             circle.classList.add('animation')
         }
         function p5handleTouchMove(event) {
             var touch = event.touches[0]
             var change = touch.clientX - startingX
-            if (change > 30 || change < -30) {
+            if (change > 15 || change < -15) {
                 p1.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
                 p2.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
                 p3.style.transform = `translateX(${(change - screen.width * 4) < -(screen.width * 4) ? -(screen.width * 4) : change - screen.width * 4}px)`
@@ -5069,19 +4990,11 @@
             if (change < half) {
                 p4.style.transform = 'translateX(-400%)'
                 p5.style.transform = 'translateX(-400%)'
-                p1.style.transition = 'all .4s'
-                p2.style.transition = 'all .4s'
-                p3.style.transition = 'all .4s'
-                p4.style.transition = 'all .4s'
-                p5.style.transition = 'all .4s'
+                addTransition()
             } else {
                 p4.style.transform = 'translateX(-300%)'
                 p5.style.transform = 'translateX(-300%)'
-                p1.style.transition = 'all .4s'
-                p2.style.transition = 'all .4s'
-                p3.style.transition = 'all .4s'
-                p4.style.transition = 'all .4s'
-                p5.style.transition = 'all .4s'
+                addTransition()
                 let element = document.querySelector('.footer__item.gifts')
                 footerItem.forEach((element) => {
                     element.classList.remove('is-active')
@@ -5095,6 +5008,20 @@
                 slideLine.style.height = `${slidesGifts.clientHeight < heightBody ? heightBody : slidesGifts.clientHeight}px`
             }
 
+        }
+        function removeTransition() {
+            p1.style.transition = ''
+            p2.style.transition = ''
+            p3.style.transition = ''
+            p4.style.transition = ''
+            p5.style.transition = ''
+        }
+        function addTransition() {
+            p1.style.transition = 'all .4s'
+            p2.style.transition = 'all .4s'
+            p3.style.transition = 'all .4s'
+            p4.style.transition = 'all .4s'
+            p5.style.transition = 'all .4s'
         }
     </script>
 </body>
