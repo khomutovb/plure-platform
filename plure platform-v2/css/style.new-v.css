@@ -1,0 +1,465 @@
+body {
+    background: linear-gradient(0deg, #2F5EA1 0%, #0E1F41 100%);
+    background-attachment: fixed;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url(/img/bg.png);
+    z-index: -1;
+}
+
+.page__content {
+    background: transparent;
+}
+
+header {
+    background: linear-gradient(0deg, #2F5EA1 0%, #2A4F9C 100%);
+    box-shadow: inset 0px -2px 0px #17397E;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.header__item {
+    background: linear-gradient(180deg, #FFF6E8 0%, #F9DDBF 100%);
+    box-shadow: 0px 4px 4px -2px #17397E, inset 0px 2px 2px #FFF8DC;
+    border-radius: 6px;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 19px;
+    color: #9C4400;
+    font-family: 'Museo Sans Rounded 900';
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    width: 76px;
+}
+
+.header__item span {
+    padding-top: 3px;
+}
+
+.header__item.setting {
+    box-shadow: none;
+}
+
+.tournaments__item-left__info {
+    background: linear-gradient(180deg, #B976EA 0%, #8D33E9 100%);
+    box-shadow: 0px 6px 12px -2px rgba(0, 0, 0, 0.25), inset 0px 2px 0px #CCA8F4, inset 0px -2px 0px #672DAF;
+    border-radius: 12px 2px 2px 12px;
+    width: 96px;
+}
+
+.tournaments__item {
+    background: transparent;
+    /* background: linear-gradient(174.21deg, #FFF6E8 42.59%, #F7D5B3 100%); */
+}
+
+.tournaments__item::before {
+    content: "";
+    position: absolute;
+    width: calc(100% - 96px);
+    height: 100%;
+    left: 96px;
+    top: 0;
+    background: linear-gradient(174.21deg, #FFF6E8 42.59%, #F7D5B3 100%);
+    box-shadow: 0px 6px 12px -2px rgba(0, 0, 0, 0.3), inset 0px -2px 0px rgba(188, 114, 111, 0.6);
+    border-radius: 2px 16px 16px 2px;
+    z-index: -1;
+}
+
+.tournaments__item-left__info::before {
+    background: linear-gradient(357.01deg, #61A542 3.5%, #8AD469 98.53%);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25), inset 0px -2px 0px rgba(56, 93, 23, 0.25);
+    border-radius: 2px 2px 12px 12px;
+    top: 0;
+    right: -webkit-calc(0% - 146px);
+    right: -moz-calc(0% - 146px);
+    right: calc(0% - 146px);
+    font-family: 'Museo Sans Rounded';
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #437022;
+    text-shadow: 0px 1px 1px #BFE26F;
+}
+
+.btn__play {
+    position: relative;
+    background: radial-gradient(135.71% 91.74% at 51.34% 0%, #FFCB57 34.54%, #FFC500 45.89%, #FF8F00 82.57%, #E36E00 100%);
+    box-shadow: 0px 0px 0px 2px #D49C8E, 0px 0px 2px 3px #FFF8DC;
+    border-radius: 8px;
+    height: 42px;
+    font-family: 'Museo Sans Rounded 900';
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    -webkit-text-stroke: 1px #9C4400;
+    text-shadow: 0px 1px 0px #9C4400;
+}
+
+.btn__play::before {
+    content: "";
+    background-image: url("data:image/svg+xml,%0A%3Csvg width='6' height='7' viewBox='0 0 6 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.61525 3.72047C2.3995 4.42238 1.09735 4.44306 0.706828 3.76665C0.316303 3.09024 0.985282 1.97289 2.20103 1.27098C3.41678 0.569065 4.71893 0.548388 5.10945 1.2248C5.49997 1.9012 4.831 3.01855 3.61525 3.72047Z' fill='%23FFEBAD'/%3E%3Cpath d='M2 6.00005C2 6.55234 1.55228 7.00005 1 7.00005C0.447715 7.00005 0 6.55234 0 6.00005C0 5.44777 0.447715 5.00005 1 5.00005C1.55228 5.00005 2 5.44777 2 6.00005Z' fill='%23FFEBAD'/%3E%3C/svg%3E%0A");
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    pointer-events: none;
+    width: 6px;
+    height: 7px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.btn__play span {
+    background: linear-gradient( 360deg, #FFAE00 11.84%, #FFDA4F 86.84%);
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tournaments__item-middle__info .title {
+    padding-top: 12px;
+    font-family: 'Museo Sans Rounded 900';
+    color: #9C4400;
+}
+
+.tournaments__item-left__info {
+    justify-content: space-between;
+    margin-right: 8px;
+}
+
+.tournaments__item-left__info .price {
+    order: 2;
+    margin: auto;
+    font-family: 'Museo Sans Rounded 900';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 33px;
+    line-height: 39px;
+    text-shadow: 0px 2px 0px #6023AB;
+    -webkit-text-stroke: 1px #6023AB;
+}
+
+.tournaments__item-left__info .prize {
+    padding: 0;
+    padding-top: 8px;
+    -webkit-text-stroke: 1px #6023AB;
+    text-shadow: 0px 1px 0px #6023AB;
+    font-family: 'Museo Sans Rounded 900';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.tournaments__item-middle__info .players {
+    padding: 0;
+    margin-top: 12px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F2D1B9;
+    box-shadow: 0px 1px 2px #FFF8DC, inset 0px 1px 0px 1px #D49C8E;
+    border-radius: 6px;
+    max-width: 88px;
+}
+
+.tournaments__item-middle__info {
+    justify-content: center;
+}
+
+.tournaments__item-middle__info .players span {
+    font-family: 'Museo Sans Rounded 900';
+    font-size: 14px;
+    text-align: center;
+    color: #DB6C3F;
+}
+
+.tournaments__item-right__info .type-fee {
+    font-family: 'Museo Sans Rounded 900';
+    font-size: 14px;
+    line-height: 17px;
+    color: #DB6C3F;
+}
+
+.tournaments__item-right__info .prizes__item svg {
+    top: initial;
+}
+
+.tournaments__item-right__info .prizes__item p {
+    font-family: 'Museo Sans Rounded 900';
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    -webkit-text-stroke: 1px #9C4400;
+    text-shadow: 0px 2px 0px #9C4400;
+}
+
+.tournaments__item-right__info {
+    width: 25%;
+}
+
+.prizes__item {
+    display: flex;
+    align-items: center;
+}
+
+.prizes__item .diamond {
+    background-image: url(/img/diamond.png);
+    width: 18px;
+    height: 16px;
+    margin-right: 2px;
+}
+
+footer {
+    background: transparent;
+    height: auto;
+    box-shadow: none;
+}
+
+.footer__item.lobby {
+    width: 112px;
+}
+
+.footer__item {
+    width: 20%;
+    height: 64px;
+    background: linear-gradient(0deg, #2F5EA1 0%, #2A4F9C 100%);
+    border: 1px solid #17397E;
+    box-sizing: border-box;
+    box-shadow: inset 0px 3px 0px #316EB9;
+    border-radius: 8px 8px 0px 0px;
+    padding-top: 20px;
+    transition: height .4s;
+}
+
+.footer__item.account, .footer__item.results {
+    width: 20%;
+}
+
+.footer__list {
+    position: relative;
+    padding: 0;
+    align-items: flex-end;
+}
+.footer__list::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 10px;
+    left: 0;
+    background: #2c559e;
+}
+.footer__item p {
+    opacity: 0;
+    font-family: 'Museo Sans Rounded 900';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 21px;
+    text-shadow: 0px 1px 1px #17387C;
+    transition: all .4s;
+}
+
+.footer__item.is-active {
+    height: 68px;
+    background: linear-gradient(0deg, #498BEC 0%, #3468B4 100%);
+    box-shadow: inset 0px 3px 0px #599CF5;
+}
+
+.footer__item.is-active p {
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+.footer__item__icon {
+    top: 0;
+    width: initial;
+    transition: top .4s;
+    pointer-events: none;
+}
+
+.footer__item.is-active .footer__item__icon {
+    top: -15px;
+}
+
+.circle {
+    display: none;
+}
+
+.platform__container {
+    padding: 0 8px;
+    padding-top: 76px;
+    padding-bottom: 65px;
+}
+
+.tournaments__title {
+    position: relative;
+    font-family: 'Museo Sans Rounded 900';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.tournaments__title::after {
+    content: "";
+    width: 40%;
+    height: 1px;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    background: #498AEB;
+}
+
+.tournaments__title::before {
+    content: "";
+    width: 40%;
+    height: 1px;
+    position: absolute;
+    top: 8px;
+    right: 0;
+    background: #498AEB;
+}
+
+.header__item-icon {
+    position: absolute;
+    left: 0;
+}
+
+.header__item-icon.money {
+    left: -18px;
+}
+
+.header__item-icon.diamond {
+    left: -18px;
+    top: -2px;
+}
+
+.header__item-icon.lvl {
+    left: -10px;
+    top: -4px;
+}
+
+.header__item-icon.lvl::before {
+    content: "6";
+    position: absolute;
+    font-family: 'Museo Sans Rounded 900';
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    -webkit-text-stroke: 1px #7B5B5B;
+    text-shadow: 0px 1px 0px #7b5b5b;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 27px;
+}
+
+.header__item.setting::before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: -5px;
+    width: 1px;
+    height: 45px;
+    background: #17397E;
+}
+
+.special-offers__item-v {
+    display: flex;
+}
+
+.special__circle {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    border: 4px solid #FFF6E8;
+    margin-right: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.special__circle:last-child{
+    margin-right: 4px;
+}
+.special__circle.blue {
+    background: radial-gradient(50% 50% at 50% 50%, #69BEBE 0%, #428CA3 100%);
+    box-shadow: inset 0px 0px 8px #357699;
+}
+
+.special__circle.green {
+    background: radial-gradient(50% 50% at 50% 50%, #8AD469 0%, #61A542 100%);
+    box-shadow: inset 0px 0px 8px #38927C;
+}
+
+.special-offers__list {
+    justify-content: space-between;
+    max-width: 375px;
+    margin: auto;
+}
+
+.special-offers__item-v:last-child {
+    flex-wrap: wrap;
+}
+
+.special__circle-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    border-radius: 50%;
+    border: 4px solid #FFF6E8;
+    flex-basis: calc(50% - 8px);
+    max-width: 52px;
+    margin: 4px;
+}
+
+.special__circle-small p {
+    font-family: 'Museo Sans Rounded 900';
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFF6E8;
+    text-shadow: 0px 1px 2px #5A2494;
+}
+
+.special__circle-small.pink {
+    background: radial-gradient(50% 50% at 50% 50%, #AB81F5 0%, #8E35E9 100%);
+    box-shadow: inset 0px 0px 4px #221981;
+}
+
+.special__circle-small.blue {
+    background: radial-gradient(50% 50% at 50% 50%, #69BEBE 0%, #428CA3 100%);
+    box-shadow: inset 0px 0px 8px #357699;
+}
+
+.special__circle-small.darkblue {
+    background: radial-gradient(50% 50% at 50% 50%, #3D77CC 0%, #2B519D 100%);
+    box-shadow: inset 0px 0px 8px #17397E;
+}
+
+.special__circle-small.yellow {
+    background: radial-gradient(50% 50% at 50% 50%, #F5CF46 0%, #EE9B37 100%);
+    box-shadow: inset 0px 0px 8px #E27D31;
+}
